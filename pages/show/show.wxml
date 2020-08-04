@@ -1,0 +1,38 @@
+<!--pages/show/show.wxml-->
+<view class="container">
+  <image></image>
+  <view class="pet-card">
+    <view class="pet-name"></view>
+    <view class="description">
+      <view class="prop"> 
+        <view class="gender-breed">
+          <view class="gender"> </view>
+          <view class="breed"> </view>
+        </view>
+        <view class="neutered"> </view>
+      </view>
+      <view class="p"> </view>
+    </view>
+  </view>
+  <button></button>
+</view>
+
+
+
+
+
+
+<view class="nav-bar">
+  <view class="icons">
+    <image></image>
+    <view class="text">Home</view>
+  </view>
+  <view class="icons">
+    <image></image>
+    <view class="text">Pets</view>
+  </view>
+  <view class="icons">
+    <image></image>
+    <view class="text">Me</view>
+  </view>
+</view>

@@ -1,0 +1,50 @@
+<!--pages/landing/landing.wxml-->
+<view class="surprise {{popUp?'':'hide'}}">
+  <view class="pop-up">
+      <image></image>
+      <view class="a-pet-info">
+        <view class="name"></view>
+        <view class="description"></view>
+        <view class="daily-rate"></view>
+      </view>
+    <button></button>
+  </view>
+</view>
+<view class="everything {{blur? 'blur':''}}" bindtap="hidePopUp">
+  <view class="container">
+    <view class="banner"> </view>
+    <view class="contents">
+      <view class="pet-card" id="pet" bindtap="enablePopUp">
+        <image> </image>
+        <view class="pet-info" id="abc">
+          <view class="h3"> </view>
+          <view class="description">
+            <view class="prop"> 
+              <view class="gender-breed">
+                <view class="gender"> </view>
+                <view class="breed"> </view>
+              </view>
+              <view class="neutered"> </view>
+            </view>
+            <view class="p"> </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="nav-bar">
+    <view class="icons">
+      <image></image>
+      <view class="text">Home</view>
+    </view>
+    <view class="icons">
+      <image></image>
+      <view class="text">Pets</view>
+    </view>
+    <view class="icons">
+      <image></image>
+      <view class="text">Me</view>
+    </view>
+  </view>
+</view>

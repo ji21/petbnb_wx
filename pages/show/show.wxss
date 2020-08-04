@@ -1,0 +1,97 @@
+/* pages/show/show.wxss */
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.container > image {
+  width: 72%;
+  height: 20%;
+  border-radius: 18rpx;
+}
+
+.pet-card {
+  width: 72%;
+  height: 40%;
+  position: relative;
+  background: white;
+  border-radius: 8rpx;
+}
+
+.pet-name {
+  border: 1px solid black;
+  height: 12%;
+  width: 50%;
+  position: absolute;
+  top: 50rpx;
+  left: 30rpx;
+}
+
+.description {
+  height: 60%;
+  width: 80%;
+  left: 30rpx;
+  top: 120rpx;
+  position: absolute;
+  border-radius: 50rpx;
+  background: #F7F7F7;
+  box-shadow: 1px 1px 0px #F7F7F7;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.description .prop {
+  border: 1px solid black;
+  width: 100%;
+  height: 14%;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.description .prop .gender-breed {
+  border: 1px solid black;
+  border-radius: 50rpx;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.description .prop .neutered {
+  border: 1px solid black;
+  border-radius: 50rpx;
+  width: 35%;
+  height: 100%;
+}
+
+.description .prop .gender-breed .breed {
+  border: 1px solid black;
+  width: 70%;
+  height: 100%;
+}
+
+.description .prop .gender-breed .gender {
+  border: 1px solid black;
+  width: 25%;
+  height: 100%;
+}
+
+
+.description .p {
+  border: 1px solid black;
+  width: 100%;
+  height: 80%;
+}
+
+
+
+button {
+  width: 72%;
+  height: 5%;
+  background:rgb(0, 255, 234);
+}
