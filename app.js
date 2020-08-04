@@ -9,13 +9,14 @@ App({
       success: (res) => {
       // insert next code here
         wx.request({
-          url: 'http://localhost:3000/',
+          url: 'http://localhost:3000/login',
           method: 'post',
           data: {
             code: res.code
           },
         // insert next code here
           success: (res) => {
+            console.log('res', res)
             this.globalData.userId = res.data.userId
           }
         })
