@@ -1,6 +1,7 @@
 /**app.wxss**/
 page {
   height: 100%;
+  z-index: 1;
 }
 
 .container {
@@ -47,5 +48,5 @@ page {
 }
 
 .grey {
-  background-color: grey;
+  background: #FFF3D0!important;
 }

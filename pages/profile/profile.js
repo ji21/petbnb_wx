@@ -1,15 +1,11 @@
-// pages/landing/landing.js
-const app = getApp();
-
+// pages/profile/profile.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    popUp: false,
-    blur: false,
-    home: true
+    profile: true
   },
 
   /**
@@ -67,45 +63,16 @@ Page({
   onShareAppMessage: function () {
 
   },
-  goToShow: function() {
-    wx.redirectTo({
-      url: '/pages/show/show',
-    })
-  },
-
-  enablePopUp: function () {
-    console.log('showing')
-    this.setData({popUp: true, blur: true});
-    console.log(this.data)
-  },
-  hidePopUp: function() {
-    console.log('hiding')
-    this.setData({popUp: false})
-    // this.setData({})
-  },
   goToLanding: function() {
     if (this.__route__ === "pages/landing/landing") {
       this.setData({home: true});
       console.log(1);
-    }
-  },
-  goToAdd: function() {
-    wx.redirectTo({
-      url: '/pages/add/add',
-    })
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    this.goToProfile()
-  },
-  goToProfile: function() {
-    if (app.globalData.userInfo == null ) {
-      this.getUserInfo();
-      console.log("ok")
     } else {
-      wx.redirectTo({
-        url: '/pages/profile/profile',
-      })
-    }
+      wx.navigateTo({
+        url: '/pages/landing/landing'
+    })
+  }},
+  goToAdd: function() {
+    console.log(2)
   }
 })

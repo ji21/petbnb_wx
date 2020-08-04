@@ -1,0 +1,18 @@
+<!--pages/add/add.wxml-->
+<text>pages/add/add.wxml</text>
+
+
+  <view class="nav-bar">
+    <button class="icons {{home?'grey':''}}" bindtap="goToLanding">
+      <image src="/images/sydney-opera-house.svg"/>
+      <view class="text">Home</view>
+    </button>
+    <button class="icons {{add?'grey':''}}" bindtap="goToAdd">
+      <image src="/images/veterinary.svg"/>
+      <view class="text">Add new</view>
+    </button>
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="icons {{profile?'grey':''}}" bindtap="goToProfile">
+      <image src="/images/user.svg"/>
+      <view class="text">Me</view>
+    </button>
+  </view>
