@@ -1,4 +1,5 @@
 <!--pages/landing/landing.wxml-->
+<view class="rehide {{popUp?'':'hide'}}" bindtap="hidePopUp"></view>
 <view class="surprise {{popUp?'':'hide'}}">
   <view class="pop-up">
       <image></image>
@@ -7,10 +8,10 @@
         <view class="description"></view>
         <view class="daily-rate"></view>
       </view>
-    <button></button>
+    <button bindtap="goToShow"></button>
   </view>
 </view>
-<view class="everything {{blur? 'blur':''}}" bindtap="hidePopUp">
+<view class="everything {{popUp || showLogin?'blur':''}}">
   <view class="container">
     <view class="banner"> </view>
     <view class="contents">
@@ -30,21 +31,107 @@
           </view>
         </view>
       </view>
+      <view class="pet-card" id="pet" bindtap="enablePopUp">
+        <image> </image>
+        <view class="pet-info" id="abc">
+          <view class="h3"> </view>
+          <view class="description">
+            <view class="prop"> 
+              <view class="gender-breed">
+                <view class="gender"> </view>
+                <view class="breed"> </view>
+              </view>
+              <view class="neutered"> </view>
+            </view>
+            <view class="p"> </view>
+          </view>
+        </view>
+      </view>
+      <view class="pet-card" id="pet" bindtap="enablePopUp">
+        <image> </image>
+        <view class="pet-info" id="abc">
+          <view class="h3"> </view>
+          <view class="description">
+            <view class="prop"> 
+              <view class="gender-breed">
+                <view class="gender"> </view>
+                <view class="breed"> </view>
+              </view>
+              <view class="neutered"> </view>
+            </view>
+            <view class="p"> </view>
+          </view>
+        </view>
+      </view>
+      <view class="pet-card" id="pet" bindtap="enablePopUp">
+        <image> </image>
+        <view class="pet-info" id="abc">
+          <view class="h3"> </view>
+          <view class="description">
+            <view class="prop"> 
+              <view class="gender-breed">
+                <view class="gender"> </view>
+                <view class="breed"> </view>
+              </view>
+              <view class="neutered"> </view>
+            </view>
+            <view class="p"> </view>
+          </view>
+        </view>
+      </view>
+      <view class="pet-card" id="pet" bindtap="enablePopUp">
+        <image> </image>
+        <view class="pet-info" id="abc">
+          <view class="h3"> </view>
+          <view class="description">
+            <view class="prop"> 
+              <view class="gender-breed">
+                <view class="gender"> </view>
+                <view class="breed"> </view>
+              </view>
+              <view class="neutered"> </view>
+            </view>
+            <view class="p"> </view>
+          </view>
+        </view>
+      </view>
+      <view class="pet-card" id="pet" bindtap="enablePopUp">
+        <image> </image>
+        <view class="pet-info" id="abc">
+          <view class="h3"> </view>
+          <view class="description">
+            <view class="prop"> 
+              <view class="gender-breed">
+                <view class="gender"> </view>
+                <view class="breed"> </view>
+              </view>
+              <view class="neutered"> </view>
+            </view>
+            <view class="p"> </view>
+          </view>
+        </view>
+      </view>
     </view>
+    <view style="height:200rpx"></view>
   </view>
 
   <view class="nav-bar">
-    <view class="icons">
-      <image></image>
+    <button class="icons {{home?'grey':''}}" bindtap="goToLanding">
+      <image src="/images/sydney-opera-house.svg"/>
       <view class="text">Home</view>
-    </view>
-    <view class="icons">
-      <image></image>
-      <view class="text">Pets</view>
-    </view>
-    <view class="icons">
-      <image></image>
+    </button>
+    <button class="icons {{add?'grey':''}}" bindtap="goToAdd">
+      <image src="/images/veterinary.svg"/>
+      <view class="text">Add new</view>
+    </button>
+    <button class="icons {{profile?'grey':''}}" bindtap="goToProfile">
+      <image src="/images/user.svg"/>
       <view class="text">Me</view>
-    </view>
+    </button>
+  </view>
+  </view>
+  <view class="log-in {{showLogin?'':'hide'}}">
+    <view class="rehide-pop-up" bindtap="rehidePopUp"></view>
+    <view class="login-pop-up">
   </view>
 </view>

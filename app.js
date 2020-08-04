@@ -2,14 +2,23 @@
 App({
   onLaunch: function () {
     // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
+   
+    console.log(1);
     // 登录
     wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+      success: (res) => {
+      // insert next code here
+        wx.request({
+          url: 'http://localhost:3000/',
+          method: 'post',
+          data: {
+            code: res.code
+          },
+        // insert next code here
+          success: (res) => {
+            this.globalData.userId = res.data.userId
+          }
+        })
       }
     })
     // 获取用户信息

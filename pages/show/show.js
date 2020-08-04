@@ -62,5 +62,22 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  goToLanding: function() {
+    console.log(this.__route__)
+    if (this.__route__ === "pages/landing/landing") {
+      this.setData({home: true});
+      console.log(1);
+    } else {
+      wx.navigateTo({
+        url: '/pages/landing/landing',
+      })
+    }
+  },
+  goToAdd: function() {
+    console.log(2)
+  },
+  goToProfile: function() {
+    console.log(3)
   }
 })

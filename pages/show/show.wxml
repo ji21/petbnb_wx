@@ -23,16 +23,16 @@
 
 
 <view class="nav-bar">
-  <view class="icons">
-    <image></image>
-    <view class="text">Home</view>
-  </view>
-  <view class="icons">
-    <image></image>
-    <view class="text">Pets</view>
-  </view>
-  <view class="icons">
-    <image></image>
-    <view class="text">Me</view>
-  </view>
+    <button class="icons {{home?'grey':''}}" bindtap="goToLanding">
+      <image src="/images/sydney-opera-house.svg"/>
+      <view class="text">Home</view>
+    </button>
+    <button class="icons {{add?'grey':''}}" bindtap="goToAdd">
+      <image src="/images/veterinary.svg"/>
+      <view class="text">Add new</view>
+    </button>
+    <button class="icons {{profile?'grey':''}}" bindtap="goToProfile">
+      <image src="/images/user.svg"/>
+      <view class="text">Me</view>
+    </button>
 </view>

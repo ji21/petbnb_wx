@@ -5,12 +5,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  height: 94%;
 }
 
 .container > image {
   width: 72%;
   height: 20%;
   border-radius: 18rpx;
+  border: 4rpx solid #FFF3D0;
+  box-shadow: 0rpx 10rpx 12rpx #FFF3D0;
 }
 
 .pet-card {
@@ -88,10 +91,9 @@
   height: 80%;
 }
 
-
-
-button {
+.container > button {
   width: 72%;
   height: 5%;
-  background:rgb(0, 255, 234);
+  background:#FF695D;
 }
+

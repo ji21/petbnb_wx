@@ -1,4 +1,6 @@
 // pages/landing/landing.js
+const app = getApp();
+
 Page({
 
   /**
@@ -6,7 +8,9 @@ Page({
    */
   data: {
     popUp: false,
-    blur: false
+    blur: false,
+    home: true,
+    showLogin: false
   },
 
   /**
@@ -64,11 +68,43 @@ Page({
   onShareAppMessage: function () {
 
   },
+  goToShow: function() {
+    wx.redirectTo({
+      url: '/pages/show/show',
+    })
+  },
 
-  enablePopUp: function (e) {
+  enablePopUp: function () {
+    console.log('showing')
     this.setData({popUp: true, blur: true});
     console.log(this.data)
   },
   hidePopUp: function() {
+    console.log('hiding')
+    this.setData({popUp: false})
+    // this.setData({})
+  },
+  goToLanding: function() {
+    if (this.__route__ === "pages/landing/landing") {
+      this.setData({home: true});
+      console.log(1);
+    }
+  },
+  goToAdd: function() {
+    console.log(2)
+  },
+  goToProfile: function() {
+    if (app.globalData.userInfo == null ) {
+        console.log("ok")
+        this.setData({showLogin: true})
+    } else {
+      wx.redirectTo({
+        url: '/pages/profile/profile',
+      })
+    }
+  },
+  rehidePopUp: function() {
+    console.log("hiding popup")
+    this.setData({showLogin: false})
   }
 })
