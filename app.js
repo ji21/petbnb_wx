@@ -16,13 +16,8 @@ App({
           },
         // insert next code here
           success: (res) => {
-<<<<<<< HEAD
-            console.log(res);
-            this.globalData.userId = res.data.userId;
-=======
             console.log('res', res)
             this.globalData.userId = res.data.userId
->>>>>>> 30cc0f5581342e004d32e7ea0c6bad3291cca37b
           }
         })
       }
