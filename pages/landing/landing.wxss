@@ -13,12 +13,14 @@
   height: 100%;
   width: 100%;
   position: fixed;
+  background-color: black;
+  opacity: 0.2;
 }
 
 .surprise {
   position: fixed;
   width: 74%;
-  height: 50%;
+  height: 64%;
   top: 15%;
   left: 13%;
   right: 13%;
@@ -57,7 +59,7 @@
   padding: 15rpx 15rpx 20rpx 15rpx;
   box-shadow: 0 2rpx 2rpx rgb(0, 255, 234);
   width: 15rpx;
-  height: 8%;
+  height: 12%;
   background-color:#FF695D;
   color: white;
 }
@@ -81,12 +83,13 @@
 .pet-card {
   background: white;
   margin: 20rpx 10rpx 0rpx 10rpx;
-  width: 94%;
+  width: 98%;
   height: 230rpx;
   display: flex;
   justify-content: space-around;
   align-items: center;
   border-radius: 12rpx;
+  box-shadow: 4rpx 4rpx 8rpx rgb(231, 231, 231);
 }
 
 .pet-card image {
@@ -144,18 +147,21 @@
 .pet-info .description .prop .neutered {
   border-radius: 50rpx;
   background-color: white;
-  width: 35%;
+  width: 50%;
   height: 100%;
+  border: 1px solid black;
 }
 
 .pet-info .description .prop .gender-breed .breed {
   width: 70%;
   height: 100%;
+  border: 1px solid black;
 }
 
 .pet-info .description .prop .gender-breed .gender {
   width: 25%;
   height: 100%;
+  border: 1px solid black;
 }
 
 .pet-info .description .p {

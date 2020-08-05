@@ -1,7 +1,50 @@
 <!--pages/add/add.wxml-->
-<text>pages/add/add.wxml</text>
+<view class="rehide {{popUp?'':'hide'}}" bindtap="hidePopUp"></view>
+<view class="surprise {{popUp?'':'hide'}}">
+  <view class="pop-up">
+    <image src=""/>
+    <view class="a-pet-info">
+      <view class="h3">{{pet.name}}</view>
+      <view class="description">
+        <view class="prop"> 
+          <view class="gender-breed">
+            <view class="gender">{{pet.gender == 'male'? 'male logo': 'female logo'}}</view>
+            <view class="breed">{{pet.breed}}</view>
+          </view>
+          <view class="neutered">{{pet.neutered?'tick logo': 'cross logo'}} neutered</view>
+        </view>
+        <view class="p">{{pet.description}}</view>
+        <view class="price">{{pet.price}}$</view>
+      </view>
+    </view>
+  </view>
+</view>
 
-
+<view class="everything {{popUp ?'blur':''}}">
+  <view class="container"> 
+    <view class="my-pets">
+    <!-- wx:for="{{pets}}" wx:for-item="pet" data-id="{{pet.id}}" -->
+      <view class="pet-card" bindtap="enablePopUp">
+          <image src=""/>
+          <view class="pet-info">
+            <view class="h3">{{pet.name}}</view>
+            <view class="description">
+              <view class="prop"> 
+                <view class="gender-breed">
+                  <view class="gender">{{pet.gender == 'male'? 'male logo': 'female logo'}}</view>
+                  <view class="breed">{{pet.breed}}</view>
+                </view>
+                <view class="neutered">{{pet.neutered?'tick logo': 'cross logo'}} neutered</view>
+              </view>
+              <view class="p">{{pet.description}}</view>
+            </view>
+          </view>
+        </view>
+    </view>
+    <view class="btn-div">
+      <button class="add-btn"> </button>
+    </view>
+  </view>
   <view class="nav-bar">
     <button class="icons {{home?'grey':''}}" bindtap="goToLanding">
       <image src="/images/sydney-opera-house.svg"/>
@@ -16,3 +59,7 @@
       <view class="text">Me</view>
     </button>
   </view>
+</view>
+
+
+

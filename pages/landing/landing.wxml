@@ -2,117 +2,39 @@
 <view class="rehide {{popUp?'':'hide'}}" bindtap="hidePopUp"></view>
 <view class="surprise {{popUp?'':'hide'}}">
   <view class="pop-up">
-      <image></image>
+      <image src="{{}}"/>
       <view class="a-pet-info">
-        <view class="name"></view>
-        <view class="description"></view>
-        <view class="daily-rate"></view>
+        <view class="name">{{petName}}</view>
+        <view class="description">{{petDescription}}</view>
+        <view class="daily-rate">${{petPrice}}</view>
       </view>
-    <button bindtap="goToShow"></button>
+    <button bindtap="goToSummary"></button>
   </view>
 </view>
-<view class="everything {{popUp || showLogin?'blur':''}}">
+<view class="everything {{popUp ?'blur':''}}">
   <view class="container">
     <view class="banner"> </view>
     <view class="contents">
-      <view class="pet-card" id="pet" bindtap="enablePopUp">
-        <image> </image>
-        <view class="pet-info" id="abc">
-          <view class="h3"> </view>
+      <!-- wx:for="{{pets}}" wx:for-item="pet" data-id="{{pet.id}}" -->
+      <view class="pet-card" bindtap="enablePopUp">
+        <image src=""/>
+        <view class="pet-info">
+          <view class="h3">{{pet.name}}</view>
           <view class="description">
             <view class="prop"> 
               <view class="gender-breed">
-                <view class="gender"> </view>
-                <view class="breed"> </view>
+                <view class="gender">{{pet.gender == 'male'? 'male logo': 'female logo'}}</view>
+                <view class="breed">{{pet.breed}}</view>
               </view>
-              <view class="neutered"> </view>
+              <view class="neutered">{{pet.neutered?'tick logo': 'cross logo'}} neutered</view>
             </view>
-            <view class="p"> </view>
+            <view class="p">{{pet.description}}</view>
           </view>
         </view>
       </view>
-      <view class="pet-card" id="pet" bindtap="enablePopUp">
-        <image> </image>
-        <view class="pet-info" id="abc">
-          <view class="h3"> </view>
-          <view class="description">
-            <view class="prop"> 
-              <view class="gender-breed">
-                <view class="gender"> </view>
-                <view class="breed"> </view>
-              </view>
-              <view class="neutered"> </view>
-            </view>
-            <view class="p"> </view>
-          </view>
-        </view>
-      </view>
-      <view class="pet-card" id="pet" bindtap="enablePopUp">
-        <image> </image>
-        <view class="pet-info" id="abc">
-          <view class="h3"> </view>
-          <view class="description">
-            <view class="prop"> 
-              <view class="gender-breed">
-                <view class="gender"> </view>
-                <view class="breed"> </view>
-              </view>
-              <view class="neutered"> </view>
-            </view>
-            <view class="p"> </view>
-          </view>
-        </view>
-      </view>
-      <view class="pet-card" id="pet" bindtap="enablePopUp">
-        <image> </image>
-        <view class="pet-info" id="abc">
-          <view class="h3"> </view>
-          <view class="description">
-            <view class="prop"> 
-              <view class="gender-breed">
-                <view class="gender"> </view>
-                <view class="breed"> </view>
-              </view>
-              <view class="neutered"> </view>
-            </view>
-            <view class="p"> </view>
-          </view>
-        </view>
-      </view>
-      <view class="pet-card" id="pet" bindtap="enablePopUp">
-        <image> </image>
-        <view class="pet-info" id="abc">
-          <view class="h3"> </view>
-          <view class="description">
-            <view class="prop"> 
-              <view class="gender-breed">
-                <view class="gender"> </view>
-                <view class="breed"> </view>
-              </view>
-              <view class="neutered"> </view>
-            </view>
-            <view class="p"> </view>
-          </view>
-        </view>
-      </view>
-      <view class="pet-card" id="pet" bindtap="enablePopUp">
-        <image> </image>
-        <view class="pet-info" id="abc">
-          <view class="h3"> </view>
-          <view class="description">
-            <view class="prop"> 
-              <view class="gender-breed">
-                <view class="gender"> </view>
-                <view class="breed"> </view>
-              </view>
-              <view class="neutered"> </view>
-            </view>
-            <view class="p"> </view>
-          </view>
-        </view>
-      </view>
+      1
     </view>
-    <view style="height:200rpx"></view>
+    <view style="height:150rpx"></view>
   </view>
 
   <view class="nav-bar">

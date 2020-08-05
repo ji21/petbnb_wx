@@ -7,7 +7,8 @@ Page({
    * Page initial data
    */
   data: {
-    add: true
+    add: true,
+    popUp: false
   },
 
   /**
@@ -66,22 +67,23 @@ Page({
 
   },
   goToLanding: function() {
-    if (this.__route__ === "pages/landing/landing") {
-      this.setData({home: true});
-      console.log(1);
-    } else {
-      wx.navigateTo({
-        url: '/pages/landing/landing'
+    wx.redirectTo({
+      url: '/pages/landing/landing'
     })
-  }},
+  },
   goToProfile: function() {
-    if (app.globalData.userInfo == null ) {
-      this.getUserInfo();
-      console.log("ok")
-    } else {
-      wx.redirectTo({
-        url: '/pages/profile/profile',
-      })
-    }
+    wx.redirectTo({
+      url: '/pages/profile/profile',
+    })
+  },
+  enablePopUp: function () {
+    console.log('showing')
+    this.setData({popUp: true});
+    console.log(this.data)
+  },
+  hidePopUp: function() {
+    console.log('hiding')
+    this.setData({popUp: false})
+    // this.setData({})
   }
 })
