@@ -8,15 +8,27 @@ Page({
    */
   data: {
     popUp: false,
-    blur: false,
-    home: true
+    home: true,
+    petName: null,
+    petGender: null,
+    petBreed: null,
+    petNeutered: null,
+    petDescription: null,
+    petPrice: null
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    const page = this
+    wx.request({
+      url: 'the pets url',
+      success: (res) => {
+        console.log(res)
+        //this.setData(res.data)
+      }
+    })
   },
 
   /**
@@ -67,7 +79,7 @@ Page({
   onShareAppMessage: function () {
 
   },
-  goToShow: function() {
+  goToSummary: function() {
     wx.redirectTo({
       url: '/pages/show/show',
     })
@@ -75,7 +87,7 @@ Page({
 
   enablePopUp: function () {
     console.log('showing')
-    this.setData({popUp: true, blur: true});
+    this.setData({popUp: true});
     console.log(this.data)
   },
   hidePopUp: function() {
@@ -99,13 +111,8 @@ Page({
     this.goToProfile()
   },
   goToProfile: function() {
-    if (app.globalData.userInfo == null ) {
-      this.getUserInfo();
-      console.log("ok")
-    } else {
-      wx.redirectTo({
-        url: '/pages/profile/profile',
-      })
-    }
+    wx.redirectTo({
+      url: '/pages/profile/profile',
+    })
   }
 })

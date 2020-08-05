@@ -64,15 +64,13 @@ Page({
 
   },
   goToLanding: function() {
-    if (this.__route__ === "pages/landing/landing") {
-      this.setData({home: true});
-      console.log(1);
-    } else {
-      wx.navigateTo({
+      wx.redirectTo({
         url: '/pages/landing/landing'
     })
-  }},
+  },
   goToAdd: function() {
-    console.log(2)
+    wx.redirectTo({
+      url: '/pages/add/add',
+    })
   }
 })
