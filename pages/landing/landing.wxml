@@ -15,20 +15,20 @@
   <view class="container">
     <view class="banner"> </view>
     <view class="contents">
-      <!-- wx:for="{{pets}}" wx:for-item="pet" data-id="{{pet.id}}" -->
-      <view class="pet-card" bindtap="enablePopUp">
+      <!--  -->
+      <view class="pet-card" wx:for="{{pets}}" wx:for-item="pet" data-id="{{pet.id}}" bindtap="enablePopUp">
         <image src=""/>
         <view class="pet-info">
           <view class="h3">{{pet.name}}</view>
           <view class="description">
             <view class="prop"> 
               <view class="gender-breed">
-                <view class="gender">{{pet.gender == 'male'? 'male logo': 'female logo'}}</view>
-                <view class="breed">{{pet.breed}}</view>
+                <view class="gender" style="font-size: 15rpx">{{pet.gender == 'male'? 'male logo': 'female logo'}}</view>
+                <view class="breed" style="font-size: 19rpx">{{pet.breed}}</view>
               </view>
-              <view class="neutered">{{pet.neutered?'tick logo': 'cross logo'}} neutered</view>
+              <view class="neutered" style="font-size:18rpx">{{pet.neutered?'✅':'❌'}}neutered</view>
             </view>
-            <view class="p">{{pet.description}}</view>
+            <view class="p" style="font-size: 20rpx">{{pet.description}}</view>
           </view>
         </view>
       </view>

@@ -102,7 +102,7 @@
 
 .pet-info {
   height: 78%;
-  width: 54%;
+  width: 65%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -113,7 +113,8 @@
   border: 1px solid rgba(204, 192, 192, 0.774);
   border-radius: 10rpx;
   height: 20%;
-  width: 50%;
+  width: 40%;
+  text-align: center;
 }
 
 .pet-info .description {
@@ -124,7 +125,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-bottom: 24rpx;
+  padding-bottom: 38rpx;
 }
 
 .pet-info .description .prop {
@@ -149,17 +150,20 @@
   background-color: white;
   width: 50%;
   height: 100%;
-  border: 1px solid black;
+  text-align: center;
+  padding-bottom: 7rpx;
+  font-size: monospace;
 }
 
 .pet-info .description .prop .gender-breed .breed {
-  width: 70%;
+  width: 80%;
   height: 100%;
-  border: 1px solid black;
+  text-align: center;
+  font-family: monospace;
 }
 
 .pet-info .description .prop .gender-breed .gender {
-  width: 25%;
+  width: 20%;
   height: 100%;
   border: 1px solid black;
 }
@@ -169,7 +173,6 @@
   height: 58%;
   margin-top: 10rpx;
   margin-left: 15rpx;
-  background: white;
 }
 
 .login-pop-up {
