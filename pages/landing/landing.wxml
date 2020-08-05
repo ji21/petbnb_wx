@@ -32,7 +32,6 @@
           </view>
         </view>
       </view>
-      1
     </view>
     <view style="height:150rpx"></view>
   </view>
@@ -46,7 +45,7 @@
       <image src="/images/veterinary.svg"/>
       <view class="text">Add new</view>
     </button>
-    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="icons {{profile?'grey':''}}" bindtap="goToProfile">
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="icons {{profile?'grey':''}}">
       <image src="/images/user.svg"/>
       <view class="text">Me</view>
     </button>

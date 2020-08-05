@@ -20,7 +20,7 @@
   </view>
 </view>
 
-<view class="everything {{popUp ?'blur':''}}">
+<view class="everything {{popUp || popAdd?'blur':''}}">
   <view class="container"> 
     <view class="my-pets">
     <!-- wx:for="{{pets}}" wx:for-item="pet" data-id="{{pet.id}}" -->
@@ -42,7 +42,7 @@
         </view>
     </view>
     <view class="btn-div">
-      <button class="add-btn"> </button>
+      <button class="add-btn" bindtap="enableAddPopUp">Add~!</button>
     </view>
   </view>
   <view class="nav-bar">
@@ -61,5 +61,12 @@
   </view>
 </view>
 
-
+<view class="pop-up-hider {{popAdd?'':'hide'}}" bindtap="rehidePopAdd"></view>
+<view class="add-pop-up {{popAdd?'':'hide'}}">
+  <view class="inner-add-pop-up">
+    <form>
+      
+    </form>
+  </view>
+</view>
 
