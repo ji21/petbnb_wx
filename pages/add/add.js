@@ -8,7 +8,8 @@ Page({
    */
   data: {
     add: true,
-    popUp: false
+    popUp: false,
+    popAdd: false
   },
 
   /**
@@ -85,5 +86,15 @@ Page({
     console.log('hiding')
     this.setData({popUp: false})
     // this.setData({})
+  },
+  enableAddPopUp: function() {
+    this.setData({popAdd: true})
+  },
+  rehidePopAdd: function() {
+    this.setData({popAdd: false})
+  },
+  getUserInfo: function(e) {
+    console.log(e)
+    this.goToProfile()
   }
 })

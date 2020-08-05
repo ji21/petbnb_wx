@@ -108,9 +108,9 @@ Page({
   },
   getUserInfo: function(e) {
     console.log(e)
-    this.goToProfile()
   },
   goToProfile: function() {
+    this.getUserInfo();
     wx.redirectTo({
       url: '/pages/profile/profile',
     })
