@@ -64,9 +64,35 @@
 <view class="pop-up-hider {{popAdd?'':'hide'}}" bindtap="rehidePopAdd"></view>
 <view class="add-pop-up {{popAdd?'':'hide'}}">
   <view class="inner-add-pop-up">
-    <form>
-      
+    <form bindsubmit="submit">
+      <view class="big-div">
+        <view class="group">
+          <label>Name</label>
+          <input type="text" name="name"></input>
+        </view>
+        <view class="group">
+          <label>Breed</label>
+          <input type="text" name="breed"></input>
+        </view>
+        <view class="group">
+          <label>Description</label>
+          <input type="text" name="description"></input>
+        </view>
+        <view class="group">
+          <label>Price(per day!)</label>
+          <input type="text" name="price"></input>
+        </view>
+        <view class="group">
+          <label>Gender</label>
+          <picker range="{{gender}}" bindchange="changeGender" name="gender">{{selectedGender||'Select'}}</picker>
+        </view>
+        <view class="group">
+          <label>Neutered?</label>
+          <picker range="{{neutered}}" bindchange="changeNeutered" name="neutered">{{selectedNeutered}}</picker>
+        </view>
+      </view>
+    
+      <button form-type="submit">Add!</button>
     </form>
   </view>
 </view>
-

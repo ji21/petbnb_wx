@@ -245,7 +245,6 @@
   height: 100%;
   width: 100%;
   position: fixed;
-  background-color: black;
   top: 0;
   opacity: 0.2;
 }
@@ -260,5 +259,48 @@
 }
 
 .inner-add-pop-up form {
-  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+  padding: 40rpx 34rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
+
+.inner-add-pop-up .group {
+  display: flex;
+  border-radius: 70rpx;
+  height: 34rpx;
+  margin-bottom: 70rpx;
+}
+
+.inner-add-pop-up input {
+  width: 50%;
+  background-color: #F7F7F7;
+  border-radius: 30rpx;
+  padding-bottom: 11rpx;
+}
+
+.inner-add-pop-up label {
+  background-color: #FFF3D0;
+  width: 50%;
+  padding-bottom: 48rpx;
+  padding-left: 30rpx;
+  border-radius: 30rpx;
+}
+
+picker {
+  width: 50%;
+  background-color: #F7F7F7;
+  border-radius: 30rpx;
+  padding: 24rpx;
+}
+
+.inner-add-pop-up button{
+  background-color: #FF695D;
+  color: white;
+  margin-top: 50rpx;
+}
+

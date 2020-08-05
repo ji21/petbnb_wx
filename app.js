@@ -9,7 +9,7 @@ App({
       success: (res) => {
       // insert next code here
         wx.request({
-          url: 'http://localhost:3000/login',
+          url: getApp().globalData.host + 'login',
           method: 'post',
           data: {
             code: res.code
@@ -44,6 +44,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null, 
+    // host: 'http://localhost:3000/',
+    host: 'https://petbnb-ji21.herokuapp.com/'
   }
 })

@@ -7,11 +7,33 @@ Page({
    * Page initial data
    */
   data: {
+    gender: ['Male', 'Female'],
+    selectedGender: "Select",
+    neutered: ['Yes!', 'No.'],
+    selectedNeutered: "Select",
     add: true,
     popUp: false,
     popAdd: false
   },
+  changeNeutered: function(e) {
+    console.log(e.detail.value);
+    const value = e.detail.value;
+    if (value === "0") {
+      this.setData({selectedNeutered: "Yes!"});
+    } else {
+      this.setData({selectedNeutered: "No."});
+    }
+  },
 
+  changeGender(e) {
+    console.log(e.detail.value);
+    const value = e.detail.value;
+    if (value === "0") {
+      this.setData({selectedGender: "Male"});
+    } else {
+      this.setData({selectedGender: "Female"});
+    }
+  },
   /**
    * Lifecycle function--Called when page load
    */
@@ -96,5 +118,39 @@ Page({
   getUserInfo: function(e) {
     console.log(e)
     this.goToProfile()
+  },
+  submit: function(e) {
+    console.log(e.detail.value);
+    const name = e.detail.value.name;
+    const breed = e.detail.value.breed;
+    const description = e.detail.value.description;
+    const price = e.detail.value.price;
+    const gender = e.detail.value.gender
+    const neutered = e.detail.value.neutered
+    const boo = neutered === "0"
+    let boo2;
+    gender === "0" ? boo2 = "Male": boo2 = "Female";
+    const pet = {
+      name: name,
+      breed: breed,
+      description: description,
+      price: parseInt(price),
+      gender: boo2,
+      neutered: boo,
+      age: 0,
+      user_id: app.globalData.userId
+    }
+    wx.request({
+      url: 'https://petbnb-ji21.herokuapp.com/api/v1/pets',
+      method: 'POST',
+      data: pet,
+      success(res) {
+        console.log(res)
+        wx.redirectTo({
+          url: '/pages/add/add'
+        });
+      }
+    })
+    console.log(pet)
   }
 })
