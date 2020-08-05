@@ -23,9 +23,9 @@ Page({
   onLoad: function (options) {
     const page = this
     wx.request({
-      url: 'the pets url',
+      url: 'http://localhost:3000/api/v1/pets',
       success: (res) => {
-        console.log(res)
+        page.setData({pets: res.data})
         //this.setData(res.data)
       }
     })
@@ -85,10 +85,10 @@ Page({
     })
   },
 
-  enablePopUp: function () {
-    console.log('showing')
+  enablePopUp: function (e) {
     this.setData({popUp: true});
-    console.log(this.data)
+    console.log(e.currentTarget.dataset.id)
+    
   },
   hidePopUp: function() {
     console.log('hiding')
