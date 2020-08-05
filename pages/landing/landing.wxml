@@ -4,9 +4,9 @@
   <view class="pop-up">
       <image src="{{}}"/>
       <view class="a-pet-info">
-        <view class="name">{{petName}}</view>
-        <view class="description">{{petDescription}}</view>
-        <view class="daily-rate">${{petPrice}}</view>
+        <view class="name"></view>
+        <view class="description"></view>
+        <view class="daily-rate"></view>
       </view>
     <button bindtap="goToSummary"></button>
   </view>
@@ -17,13 +17,13 @@
     <view class="contents">
       <!--  -->
       <view class="pet-card" wx:for="{{pets}}" wx:for-item="pet" data-id="{{pet.id}}" bindtap="enablePopUp">
-        <image src=""/>
+        <image src="{{pet.photo}}"/>
         <view class="pet-info">
           <view class="h3">{{pet.name}}</view>
           <view class="description">
             <view class="prop"> 
               <view class="gender-breed">
-                <view class="gender" style="font-size: 15rpx">{{pet.gender == 'male'? 'male logo': 'female logo'}}</view>
+                <view class="gender" style="font-size: 15rpx"></view>
                 <view class="breed" style="font-size: 19rpx">{{pet.breed}}</view>
               </view>
               <view class="neutered" style="font-size:18rpx">{{pet.neutered?'✅':'❌'}}neutered</view>

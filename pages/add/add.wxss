@@ -281,6 +281,7 @@
   background-color: #F7F7F7;
   border-radius: 30rpx;
   padding-bottom: 11rpx;
+  margin-left: 10rpx;
 }
 
 .inner-add-pop-up label {
@@ -296,6 +297,7 @@ picker {
   background-color: #F7F7F7;
   border-radius: 30rpx;
   padding: 24rpx;
+  margin-left: 10rpx;
 }
 
 .inner-add-pop-up button{

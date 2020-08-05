@@ -23,7 +23,7 @@ Page({
   onLoad: function (options) {
     const page = this
     wx.request({
-      url: 'https://petbnb-ji21.herokuapp.com/api/v1/pets',
+      url: getApp().globalData.host + 'api/v1/pets',
       success: (res) => {
         page.setData({pets: res.data})
         //this.setData(res.data)

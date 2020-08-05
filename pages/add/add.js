@@ -138,10 +138,10 @@ Page({
       gender: boo2,
       neutered: boo,
       age: 0,
-      user_id: app.globalData.userId
+      user_id: getApp().globalData.userId
     }
     wx.request({
-      url: 'https://petbnb-ji21.herokuapp.com/api/v1/pets',
+      url: getApp().globalData.host + 'api/v1/pets',
       method: 'POST',
       data: pet,
       success(res) {
