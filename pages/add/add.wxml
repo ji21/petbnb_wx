@@ -1,6 +1,12 @@
 <!--pages/add/add.wxml-->
 <view class="rehide {{popUp?'':'hide'}}" bindtap="hidePopUp"></view>
-<view class="surprise {{popUp?'':'hide'}}">
+<view class="delete-pop-up {{deletePopUp?'':'hide'}}" bindtap="hideDeletePopUp">
+  <view class="delete-inner-pop"> 
+    <view id="text">Are you fucking sure?</view>
+    <button bindtap="remove">Remove</button>
+  </view>
+</view>
+<view class="surprise {{popUp?'':'hide'}} {{deletePopUp?'blur':''}}">
   <view class="pop-up">
     <image src=""/>
     <view class="a-pet-info">
@@ -17,6 +23,7 @@
         <view class="price">{{pet.price}}$</view>
       </view>
     </view>
+    <button class="delete" bindtap="deletePopUp">Remove</button>
   </view>
 </view>
 
@@ -24,19 +31,19 @@
   <view class="container"> 
     <view class="my-pets">
     <!-- wx:for="{{pets}}" wx:for-item="pet" data-id="{{pet.id}}" -->
-      <view class="pet-card" bindtap="enablePopUp">
-          <image src=""/>
+      <view class="pet-card" wx:for="{{pets}}" wx:for-item="pet" data-id="{{pet.id}}" bindtap="enablePopUp">
+          <image src="{{pet.photo}}"/>
           <view class="pet-info">
-            <view class="h3">{{pet.name}}</view>
+            <view class="h3" style="font-size:30rpx">{{pet.name}}</view>
             <view class="description">
               <view class="prop"> 
                 <view class="gender-breed">
-                  <view class="gender"></view>
-                  <view class="breed"></view>
+                  <view class="gender" style="font-size: 15rpx">{{pet.user_id}}</view>
+                  <view class="breed" style="font-size: 26rpx">{{pet.breed}}</view>
                 </view>
-                <view class="neutered"></view>
+                <view class="neutered" style="font-size:24rpx">{{pet.neutered?'✅':'❌'}}neutered</view>
               </view>
-              <view class="p"></view>
+              <view class="p" style="font-size: 20rpx">{{pet.description}}</view>
             </view>
           </view>
         </view>
@@ -91,6 +98,7 @@
           <picker range="{{neutered}}" bindchange="changeNeutered" name="neutered">{{selectedNeutered}}</picker>
         </view>
       </view>
+      <view class="image-uploader"> </view>
     
       <button form-type="submit">Add!</button>
     </form>

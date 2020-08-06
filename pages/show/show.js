@@ -1,4 +1,7 @@
 // pages/show/show.js
+
+let app = getApp();
+let host = app.globalData.host;
 Page({
 
   /**
@@ -12,7 +15,24 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    let page = this;
+    console.log(options)
+    wx.request({
+      url: `${host}api/v1/pets/${options.id}`,
+      method: "GET", 
+      success: (res) => {
+        page.setData({pet: res.data})
+        //this.setData(res.data)
+      }}
+    )
+  },
 
+  addBooking: function(e) {
+    const id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/addBooking/addBooking?id=${id}`,
+    })
+    
   },
 
   /**
@@ -26,7 +46,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+    wx.hideLoading()
   },
 
   /**
@@ -69,15 +89,19 @@ Page({
       this.setData({home: true});
       console.log(1);
     } else {
-      wx.navigateTo({
+      wx.redirectTo({
         url: '/pages/landing/landing',
       })
     }
   },
   goToAdd: function() {
-    console.log(2)
+    wx.redirectTo({
+      url: '/pages/add/add',
+    })
   },
   goToProfile: function() {
-    console.log(3)
+    wx.redirectTo({
+      url: '/pages/profile/profile',
+    })
   }
 })

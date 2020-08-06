@@ -10,7 +10,7 @@
 
 .container > image {
   width: 72%;
-  height: 20%;
+  height: 45%;
   border-radius: 18rpx;
   border: 4rpx solid #FFF3D0;
   box-shadow: 0rpx 10rpx 12rpx #FFF3D0;
@@ -25,12 +25,14 @@
 }
 
 .pet-name {
-  border: 1px solid black;
   height: 12%;
   width: 50%;
   position: absolute;
   top: 50rpx;
   left: 30rpx;
+  font-family: initial;
+  padding-left: 48rpx;
+  font-weight: bolder;
 }
 
 .description {
@@ -40,24 +42,23 @@
   top: 120rpx;
   position: absolute;
   border-radius: 50rpx;
-  background: #F7F7F7;
   box-shadow: 1px 1px 0px #F7F7F7;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  background:#FFF3D0;
+  margin-left: 26rpx;
 }
 
 .description .prop {
-  border: 1px solid black;
   width: 100%;
   height: 14%;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 
 .description .prop .gender-breed {
-  border: 1px solid black;
   border-radius: 50rpx;
   width: 50%;
   height: 100%;
@@ -66,27 +67,30 @@
 }
 
 .description .prop .neutered {
-  border: 1px solid black;
   border-radius: 50rpx;
   width: 35%;
   height: 100%;
+  font-family: 'Times New Roman', Times, serif;
+  padding-left: 26rpx;
 }
 
 .description .prop .gender-breed .breed {
-  border: 1px solid black;
   width: 70%;
   height: 100%;
+  font-family: 'Times New Roman', Times, serif;
+  padding-top: 20rpx;
+  text-align: center;
 }
 
 .description .prop .gender-breed .gender {
   border: 1px solid black;
   width: 25%;
   height: 100%;
+  padding-top: 12rpx;
 }
 
 
 .description .p {
-  border: 1px solid black;
   width: 100%;
   height: 80%;
 }
@@ -95,5 +99,6 @@
   width: 72%;
   height: 5%;
   background:#FF695D;
+  margin-bottom: 25rpx;
 }
 

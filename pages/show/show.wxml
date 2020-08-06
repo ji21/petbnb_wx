@@ -1,20 +1,20 @@
 <!--pages/show/show.wxml-->
 <view class="container">
-  <image></image>
+  <image src="{{pet.photo}}" />
   <view class="pet-card">
-    <view class="pet-name"></view>
+    <view class="pet-name">{{pet.name}}</view>
     <view class="description">
       <view class="prop"> 
         <view class="gender-breed">
           <view class="gender"> </view>
-          <view class="breed"> </view>
+          <view class="breed">{{pet.breed}}</view>
         </view>
-        <view class="neutered"> </view>
+        <view class="neutered">{{pet.neutered?'✅':'❌'}}Neutered</view>
       </view>
       <view class="p"> </view>
     </view>
   </view>
-  <button></button>
+  <button bindtap="addBooking" data-id="{{pet.id}}"> Book {{pet.name}}</button>
 </view>
 
 
