@@ -1,6 +1,10 @@
 // pages/add/add.js
 const app = getApp();
+
 const host = app.globalData.host
+
+const AV = require('../../utils/av-weapp-min.js');
+
 
 Page({
 
@@ -17,6 +21,8 @@ Page({
     popAdd: false,
     deletePopUp: false,
     userId: app.globalData.userInfo,
+    items: []
+
   },
   changeNeutered: function(e) {
     console.log(e.detail.value);
@@ -178,5 +184,26 @@ Page({
         })
       }
     })
+  },
+
+
+  takePhoto: function() {
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: function(res) {
+        console.log(12, res)
+        let tempFilePath = res.tempFilePaths[0];
+        new AV.File('file-name', {
+          blob: {
+            uri: tempFilePath,
+          },
+        }).save().then(
+          file => console.log(file.url())
+        ).catch(console.error);
+      }
+    });
   }
+
 })
