@@ -95,9 +95,13 @@ Page({
     }
   },
   goToAdd: function() {
-    console.log(2)
+    wx.redirectTo({
+      url: '/pages/add/add',
+    })
   },
   goToProfile: function() {
-    console.log(3)
+    wx.redirectTo({
+      url: '/pages/profile/profile',
+    })
   }
 })
