@@ -1,5 +1,6 @@
 // pages/add/add.js
 const app = getApp();
+const host = app.globalData.host
 
 Page({
 
@@ -15,7 +16,7 @@ Page({
     popUp: false,
     popAdd: false,
     deletePopUp: false,
-    userId: app.globalData.userInfo
+    userId: app.globalData.userInfo,
   },
   changeNeutered: function(e) {
     console.log(e.detail.value);
@@ -108,17 +109,20 @@ Page({
       url: '/pages/profile/profile',
     })
   },
-  enablePopUp: function () {
+  enablePopUp: function (e) {
     console.log('showing')
     this.setData({popUp: true});
     console.log(this.data)
+    const id = e.currentTarget.dataset.id
+    console.log(id)
+    this.setData({deleteId: id})
   },
   hidePopUp: function() {
     console.log('hiding')
     this.setData({popUp: false})
     // this.setData({})
   },
-  enableAddPopUp: function() {
+  enableAddPopUp: function(e) {
     this.setData({popAdd: true})
   },
   rehidePopAdd: function() {
@@ -162,16 +166,17 @@ Page({
     })
     console.log(pet)
   },
-  deletePopUp: function() {
-    this.setData({deletePopUp: true})
-  },
-  hideDeletePopUp: function() {
-    this.setData({deletePopUp: false})
-  },
-  remove: function() {
-
-    wx.redirectTo({
-      url: '/pages/add/add',
+  remove: function(e) {
+    const id = this.data.deleteId
+    console.log(id)
+    wx.request({
+      url: host + `api/v1/pets/${id}`,
+      method: "DELETE",
+      success: (res) => {
+        wx.redirectTo({
+          url: '/pages/add/add',
+        })
+      }
     })
   }
 })

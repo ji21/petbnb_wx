@@ -5,14 +5,15 @@ Page({
    * Page initial data
    */
   data: {
-
+  
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    console.log(options)
+    this.setData({petId: options.id, userId: options.user_id})
   },
 
   /**
@@ -62,5 +63,23 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  submit: function() {
+    // const startDate 
+    // const endDate
+    // const total
+    const booking = {
+
+    }
+    wx.request({
+      url: 'http://localhost:3000/api/v1/bookings',
+      method: "POST",
+      data: booking,
+      success: (res) => {
+        wx.redirectTo({
+          url: '/pages/profile/profile',
+        })
+      }
+    })
   }
 })

@@ -1,11 +1,5 @@
 <!--pages/add/add.wxml-->
 <view class="rehide {{popUp?'':'hide'}}" bindtap="hidePopUp"></view>
-<view class="delete-pop-up {{deletePopUp?'':'hide'}}" bindtap="hideDeletePopUp">
-  <view class="delete-inner-pop"> 
-    <view id="text">Are you fucking sure?</view>
-    <button bindtap="remove">Remove</button>
-  </view>
-</view>
 <view class="surprise {{popUp?'':'hide'}} {{deletePopUp?'blur':''}}">
   <view class="pop-up">
     <image src=""/>
@@ -23,7 +17,7 @@
         <view class="price">{{pet.price}}$</view>
       </view>
     </view>
-    <button class="delete" bindtap="deletePopUp">Remove</button>
+    <button class="delete" bindtap="remove">Remove</button>
   </view>
 </view>
 
@@ -51,6 +45,7 @@
     <view class="btn-div">
       <button class="add-btn" bindtap="enableAddPopUp">Add~!</button>
     </view>
+    <view style="width: 100%; height: 250rpx"></view>
   </view>
   <view class="nav-bar">
     <button class="icons {{home?'grey':''}}" bindtap="goToLanding">

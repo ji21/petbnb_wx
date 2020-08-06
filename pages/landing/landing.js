@@ -1,7 +1,10 @@
 // pages/landing/landing.js
 const app = getApp();
+const globalData = getApp().globalData
 const host = app.globalData.host;
 const userId = app.globalData.userId;
+import event from '../../utils/event';
+
 Page({
 
   /**
@@ -15,24 +18,38 @@ Page({
     petBreed: null,
     petNeutered: null,
     petDescription: null,
-    petPrice: null,
-    userId: app.globalData.userInfo
+    petPrice: null
   },
 
   /**
    * Lifecycle function--Called when page load
    */
+  // https://petbnb-ji21.herokuapp.com/api/v1/pets?user_id=104
+
   onLoad: function (options) {
+    // event.on('hasUserId', this, this.getPets)
     const page = this
+    console.log("getting pets")
     wx.request({
-      url: host + `api/v1/pets?user_id=${userId}`,
+      url: host + `api/v1/pets`,
       success: (res) => {
         page.setData({pets: res.data})
-        //this.setData(res.data)
+        console.log(page.data)
       }
     })
   },
 
+  // getPets() {
+  //   const page = this
+  //   console.log("getting pets")
+  //   wx.request({
+  //     url: host + `api/v1/pets`,
+  //     success: (res) => {
+  //       page.setData({pets: res.data})
+  //       console.log(page.data)
+  //     }
+  //   })
+  // },
   /**
    * Lifecycle function--Called when page is initially rendered
    */
@@ -44,7 +61,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+    console.log("global data in landing", globalData)
   },
 
   /**
@@ -90,12 +107,6 @@ Page({
     wx.navigateTo({
       url: `/pages/show/show?id=${id}`,
     })
-  },
-
-  enablePopUp: function (e) {
-    this.setData({popUp: true});
-    console.log(e.currentTarget.dataset.id)
-    
   },
   hidePopUp: function() {
     console.log('hiding')

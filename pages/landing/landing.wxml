@@ -16,7 +16,7 @@
     <view class="banner"> </view>
     <view class="contents">
       <!--  -->
-      <view class="pet-card" wx:for="{{pets}}" wx:for-item="pet" wx:if="{{pet.userId !== userId}}" data-id="{{pet.id}}" bindtap="goToSummary">
+      <view class="pet-card" wx:for="{{pets}}" wx:for-item="pet" data-id="{{pet.id}}" bindtap="goToSummary">
         <image src="{{pet.photo}}"/>
         <view class="pet-info">
           <view class="h3" style="font-size: 30rpx">{{pet.name}}</view>
