@@ -8,6 +8,7 @@ AV.init({
   appKey: config.appKey,
   serverURLs: "https://ienhaftr.lc-cn-n1-shared.com"
 });
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -25,8 +26,9 @@ App({
           },
         // insert next code here
           success: (res) => {
-            console.log('res', res)
+            console.log('global resres', res)
             this.globalData.userId = res.data.userId
+            event.emit('hasUserId')
           }
         })
       }
