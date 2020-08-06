@@ -1,4 +1,13 @@
 //app.js
+
+const AV = require('./utils/av-weapp-min.js')
+const config = require('./utils/key')
+
+AV.init({
+  appId: config.appId,
+  appKey: config.appKey,
+  serverURLs: "https://ienhaftr.lc-cn-n1-shared.com"
+});
 App({
   onLaunch: function () {
     // 展示本地存储能力
