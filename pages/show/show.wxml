@@ -7,9 +7,9 @@
       <view class="prop"> 
         <view class="gender-breed">
           <view class="gender"> </view>
-          <view class="breed"> </view>
+          <view class="breed">{{pet.breed}}</view>
         </view>
-        <view class="neutered"> </view>
+        <view class="neutered">{{pet.neutered?'✅':'❌'}}Neutered</view>
       </view>
       <view class="p"> </view>
     </view>

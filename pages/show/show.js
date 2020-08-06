@@ -32,6 +32,7 @@ Page({
     wx.navigateTo({
       url: `/pages/addBooking/addBooking?id=${id}`,
     })
+    
   },
 
   /**
@@ -45,7 +46,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+    wx.hideLoading()
   },
 
   /**
@@ -88,7 +89,7 @@ Page({
       this.setData({home: true});
       console.log(1);
     } else {
-      wx.navigateTo({
+      wx.redirectTo({
         url: '/pages/landing/landing',
       })
     }

@@ -1,6 +1,7 @@
 // pages/landing/landing.js
 const app = getApp();
-
+const host = app.globalData.host;
+const userId = app.globalData.userId;
 Page({
 
   /**
@@ -24,7 +25,7 @@ Page({
   onLoad: function (options) {
     const page = this
     wx.request({
-      url: getApp().globalData.host + 'api/v1/pets',
+      url: host + `api/v1/pets?user_id=${userId}`,
       success: (res) => {
         page.setData({pets: res.data})
         //this.setData(res.data)
@@ -83,7 +84,10 @@ Page({
   goToSummary: function(e) {
     // console.log(e)
     const id = e.currentTarget.dataset.id
-    wx.redirectTo({
+    wx.showLoading({
+      title: "loading 99"
+    })
+    wx.navigateTo({
       url: `/pages/show/show?id=${id}`,
     })
   },
