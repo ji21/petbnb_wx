@@ -13,7 +13,9 @@ Page({
     selectedNeutered: "Select",
     add: true,
     popUp: false,
-    popAdd: false
+    popAdd: false,
+    deletePopUp: false,
+    userId: app.globalData.userInfo
   },
   changeNeutered: function(e) {
     console.log(e.detail.value);
@@ -38,7 +40,14 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    const page = this
+    wx.request({
+      url: getApp().globalData.host + 'api/v1/pets',
+      success: (res) => {
+        page.setData({pets: res.data})
+        //this.setData(res.data)
+      }
+    })
   },
 
   /**
@@ -152,5 +161,17 @@ Page({
       }
     })
     console.log(pet)
+  },
+  deletePopUp: function() {
+    this.setData({deletePopUp: true})
+  },
+  hideDeletePopUp: function() {
+    this.setData({deletePopUp: false})
+  },
+  remove: function() {
+
+    wx.redirectTo({
+      url: '/pages/add/add',
+    })
   }
 })

@@ -1,7 +1,4 @@
-// pages/show/show.js
-
-let app = getApp();
-let host = app.globalData.host;
+// pages/addBooking/addBooking.js
 Page({
 
   /**
@@ -15,23 +12,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    let page = this;
-    console.log(options)
-    wx.request({
-      url: `${host}api/v1/pets/${options.id}`,
-      method: "GET", 
-      success: (res) => {
-        page.setData({pet: res.data})
-        //this.setData(res.data)
-      }}
-    )
-  },
 
-  addBooking: function(e) {
-    const id = e.currentTarget.dataset.id
-    wx.navigateTo({
-      url: `/pages/addBooking/addBooking?id=${id}`,
-    })
   },
 
   /**
@@ -81,22 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  goToLanding: function() {
-    console.log(this.__route__)
-    if (this.__route__ === "pages/landing/landing") {
-      this.setData({home: true});
-      console.log(1);
-    } else {
-      wx.navigateTo({
-        url: '/pages/landing/landing',
-      })
-    }
-  },
-  goToAdd: function() {
-    console.log(2)
-  },
-  goToProfile: function() {
-    console.log(3)
   }
 })

@@ -14,7 +14,8 @@ Page({
     petBreed: null,
     petNeutered: null,
     petDescription: null,
-    petPrice: null
+    petPrice: null,
+    userId: app.globalData.userInfo
   },
 
   /**
@@ -79,9 +80,11 @@ Page({
   onShareAppMessage: function () {
 
   },
-  goToSummary: function() {
+  goToSummary: function(e) {
+    // console.log(e)
+    const id = e.currentTarget.dataset.id
     wx.redirectTo({
-      url: '/pages/show/show',
+      url: `/pages/show/show?id=${id}`,
     })
   },
 

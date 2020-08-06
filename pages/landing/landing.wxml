@@ -16,19 +16,19 @@
     <view class="banner"> </view>
     <view class="contents">
       <!--  -->
-      <view class="pet-card" wx:for="{{pets}}" wx:for-item="pet" data-id="{{pet.id}}" bindtap="enablePopUp">
+      <view class="pet-card" wx:for="{{pets}}" wx:for-item="pet" wx:if="{{pet.userId !== userId}}" data-id="{{pet.id}}" bindtap="goToSummary">
         <image src="{{pet.photo}}"/>
         <view class="pet-info">
-          <view class="h3">{{pet.name}}</view>
+          <view class="h3" style="font-size: 30rpx">{{pet.name}}</view>
           <view class="description">
             <view class="prop"> 
               <view class="gender-breed">
-                <view class="gender" style="font-size: 15rpx"></view>
-                <view class="breed" style="font-size: 19rpx">{{pet.breed}}</view>
+                <view class="gender" style="font-size: 15rpx">{{pet.id}}</view>
+                <view class="breed" style="font-size: 26rpx">{{pet.breed}}</view>
               </view>
-              <view class="neutered" style="font-size:18rpx">{{pet.neutered?'✅':'❌'}}neutered</view>
+              <view class="neutered" style="font-size:24rpx">{{pet.neutered?'✅':'❌'}}Neutered</view>
             </view>
-            <view class="p" style="font-size: 20rpx">{{pet.description}}</view>
+            <view class="p" style="font-size: 30rpx">{{pet.description}}</view>
           </view>
         </view>
       </view>
