@@ -206,5 +206,14 @@ Page({
         ).catch(console.error);
       }
     });
+  },
+
+  goToMe: function() {
+    wx.redirectTo({
+      url: '/pages/allbookings/allbookings',
+    })
   }
+
+
+
 })

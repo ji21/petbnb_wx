@@ -103,5 +103,15 @@ Page({
     wx.redirectTo({
       url: '/pages/profile/profile',
     })
+  },
+
+  goToMe: function() {
+    wx.redirectTo({
+      url: '/pages/allbookings/allbookings',
+    })
   }
+
+
+
+
 })

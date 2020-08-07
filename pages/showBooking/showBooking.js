@@ -62,5 +62,14 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  goToAdd: function() {
+    wx.redirectTo({
+      url: '/pages/add/add',
+    })
+  },
+
+
+
 })

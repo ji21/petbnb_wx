@@ -1,22 +1,8 @@
-<!--pages/landing/landing.wxml-->
-<view class="rehide {{popUp?'':'hide'}}" bindtap="hidePopUp"></view>
-<view class="surprise {{popUp?'':'hide'}}">
-  <view class="pop-up">
-      <image src="{{}}"/>
-      <view class="a-pet-info">
-        <view class="name"></view>
-        <view class="description"></view>
-        <view class="daily-rate"></view>
-      </view>
-    <button bindtap="goToSummary"></button>
-  </view>
-</view>
-<view class="everything {{popUp ?'blur':''}}">
-  <view class="container">
-    <view class="banner"> </view>
+<view class="container">
+<view class = "bookingBanner"><text>My Bookings</text> </view>
     <view class="contents">
       <!--  -->
-      <view class="pet-card" wx:for="{{pets}}" wx:for-item="pet" data-id="{{pet.id}}" bindtap="goToSummary">
+      <view class="pet-card" wx:for="{{pets}}" wx:for-item="pet" data-id="{{pet.id}}" bindtap="goToshowBooking">
         <image src="{{pet.photo}}"/>
         <view class="pet-info">
           <view class="h3" style="font-size: 30rpx">{{pet.name}}</view>
@@ -29,12 +15,17 @@
               <view class="neutered" style="font-size:24rpx">{{pet.neutered?'✅':'❌'}}Neutered</view>
             </view>
             <view class="p" style="font-size: 30rpx">{{pet.description}}</view>
+            <view class="booking">
+            <view class= "p" style="font-size: 27rpx"><text>Start Date: {{}} End Date: {{}}</text></view>
+            <view class = "price" style="font-size: 24rpx"><text>Price :</text></view>
+            </view>
           </view>
         </view>
       </view>
     </view>
     <view style="height:150rpx"></view>
   </view>
+
 
   <view class="nav-bar">
     <button class="icons {{home?'grey':''}}" bindtap="goToLanding">
@@ -45,9 +36,9 @@
       <image src="/images/veterinary.svg"/>
       <view class="text">Add new</view>
     </button>
-    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="goToMe" class="icons {{profile?'grey':''}}">
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="icons {{profile?'grey':''}}">
       <image src="/images/user.svg"/>
       <view class="text">Me</view>
     </button>
   </view>
-</view>
+

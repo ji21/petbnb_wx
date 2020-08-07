@@ -3,35 +3,26 @@
   <view><text>Your Booking for {{pet.name}}</text></view>
   <image src="{{pet.photo}}" />
   <view class="pet-card">
-
-    <view class="pet-name">Doggy{{pet.name}}</view>
     <view class="description">
-
       <view class="prop"> 
         <view class="gender-breed">
-
           <view class="gender"> male</view>
           <view class="breed">{{pet.breed}}</view>
-
         </view>
         <view class="neutered">{{pet.neutered?'✅':'❌'}}Neutered</view>
       </view>
-
       <view class="p">Cute looking pet{{pet.description}}</view>
-    </view>
-
-
-
-
-
-
-
   </view>
-
-
-
-
-
+      <view class="bookings">
+        <view class="details">
+          <view class="dates">
+            <view class ="sdate"><text>Start Date:</text> </view>
+            <view class ="edate"><text>End date:</text> </view>
+           <view class="tprice"><text>Price: XXX{{}}Rmb</text> </view>
+          </view>
+        </view>
+        </view>
+    </view>
 
   <button bindtap="#" data-id="{{pet.id}}" data-user_id="{{pet.user_id}}"> Cancel Booking {{pet.name}}</button>
 </view>
@@ -50,9 +41,6 @@
 
 
 <!-- navbar -->
-
-
-
 
 
 

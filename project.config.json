@@ -93,6 +93,21 @@
 					"id": -1,
 					"name": "showbooking",
 					"pathName": "pages/showBooking/showBooking",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "pages/allbookings/allbookings",
+					"pathName": "pages/allbookings/allbookings",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/allbookings/allbookings",
+					"pathName": "pages/allbookings/allbookings",
+					"query": "",
 					"scene": null
 				}
 			]

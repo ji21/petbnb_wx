@@ -31,13 +31,17 @@ Page({
     const page = this
     console.log("getting pets")
     wx.request({
-      url: host + `api/v1/pets`,
+      url: host + `api/v1/bookings?user_id=${page.data.user_id}`,
       success: (res) => {
+        console.log(res)
         page.setData({pets: res.data})
         console.log(page.data)
       }
     })
   },
+
+  // https://petbnb-ji21.herokuapp.com/api/v1/bookings?user_id=104 
+  // host: 'https://petbnb-ji21.herokuapp.com/'
 
   // getPets() {
   //   const page = this
@@ -134,10 +138,14 @@ Page({
     })
   },
 
-  goToMe: function() {
+
+
+  goToshowBooking: function() {
     wx.redirectTo({
-      url: '/pages/allbookings/allbookings',
+      url: '/pages/showBooking/showBooking',
     })
-  }
+  },
+
+
 
 })

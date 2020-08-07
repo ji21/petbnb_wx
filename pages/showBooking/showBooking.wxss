@@ -20,41 +20,44 @@
 
 .pet-card {
   width: 75%;
-  height: 45%;
-  position: relative;
+  height: 41%;
+  /* position: relative; */
   background: white;
   border-radius: 8rpx;
+  display: flex;
+  flex-direction: column;
 }
 
-.pet-name {
+/* .pet-name {
   height: 12%;
   width: 50%;
   position: absolute;
-  top: 50rpx;
-  left: 30rpx;
+  top: 20rpx;
+  left: 12rpx;
   font-family: initial;
   padding-left: 48rpx;
   font-weight: bolder;
-}
+} */
 
 .description {
-  height: 60%;
-  width: 80%;
-  left: 30rpx;
-  top: 120rpx;
-  position: absolute;
-  border-radius: 50rpx;
+  height: 200rpx;
+  width: 92%;
+  left: 0rpx;
+  top: 20rpx;
+  margin-top: 20rpx;
+  /* position: absolute; */
+  border-radius: 25rpx;
   box-shadow: 1px 1px 0px #F7F7F7;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   background:#FFF3D0;
-  margin-left: 26rpx;
+  margin-left: 22rpx;
 }
 
 .description .prop {
   width: 100%;
-  height: 14%;
+  height: 12%;
   display: flex;
   justify-content: flex-start;
 }
@@ -66,6 +69,7 @@
   height: 100%;
   display: flex;
   align-items: center;
+  margin-left: 10rpx;
 }
 
 .description .prop .neutered {
@@ -87,15 +91,83 @@
 .description .prop .gender-breed .gender {
   border: 1px solid black;
   width: 25%;
-  height: 100%;
-  padding-top: 12rpx;
+  margin-top: 17px;
 }
 
 
 .description .p {
   width: 100%;
-  height: 80%;
+  height: 35%;
+  padding-top: 20rpx;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
+  margin-left: 12rpx;
+  margin-top: 12rpx;
 }
+
+.bookings {
+  height: 200rpx;
+  width: 92%;
+  /* top: 245rpx; */
+  /* position:  absolute; */
+  border-radius: 25rpx;
+  box-shadow: 1px 1px 0px #F7F7F7;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background:#fff3d0;
+  margin-left: 22rpx;
+  margin-top: 20rpx;
+  font-size: medium;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+.bookings .dates {
+display: flex;
+flex-direction: column;
+margin-top: 10rpx;
+margin-left: 15rpx;
+}
+
+.bookings .details {
+  /* display: flex; */
+  margin-top: 15rpx;
+}
+
+.bookings .details .price {
+  margin-top: 10rpx;
+  margin-left: 100rpx;
+}
+
+.bookings .details .dates .sdate {
+  margin-bottom: 12rpx;
+}
+
+.bookings .details .dates .tprice {
+  margin-top: 10rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .container > button {
   width: 72%;
@@ -103,36 +175,6 @@
   background:#FF695D;
   margin-bottom: 25rpx;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
