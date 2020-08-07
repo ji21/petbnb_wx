@@ -30,6 +30,8 @@ App({
           success: (res) => {
             console.log('global resres', res)
             this.globalData.userId = res.data.userId
+            if (this.userIdCallback) this.userIdCallback()
+            if (this.addUserIdCallback) this.addUserIdCallback()
             // event.emit('hasUserId')
           }
         })

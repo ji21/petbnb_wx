@@ -2,21 +2,59 @@
 
 let app = getApp();
 let host = app.globalData.host;
+var today = new Date();
+
+let tomorrow = new Date(today)
+tomorrow.setDate(today.getDate() + 1)
+
+var dd1 = tomorrow.getDate();
+var mm1 = tomorrow.getMonth() + 1;
+var yyyy1 = tomorrow.getFullYear();
+
+var dd = today.getDate();
+var mm = today.getMonth()+1; 
+var yyyy = today.getFullYear();
+if(dd<10) 
+{
+    dd='0'+dd;
+} 
+
+if(mm<10) 
+{
+    mm='0'+mm;
+} 
+today = yyyy+'-'+mm+'-'+dd;
+
+if(dd1<10) 
+{
+    dd1='0'+dd1;
+} 
+
+if(mm1<10) 
+{
+    mm1='0'+mm1;
+} 
+
+tomorrow = yyyy1+'-'+mm1+'-'+dd1;
+
 Page({
 
   /**
    * Page initial data
    */
   data: {
-
+    // date: 
+    date: today,
+    dateTom: tomorrow,
+    hide: true
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    console.log(this.data)
     let page = this;
-    console.log(options)
     wx.request({
       url: `${host}api/v1/pets/${options.id}`,
       method: "GET", 
@@ -25,14 +63,6 @@ Page({
         //this.setData(res.data)
       }}
     )
-  },
-
-  addBooking: function(e) {
-    const id = e.currentTarget.dataset.id
-    wx.navigateTo({
-      url: `/pages/addBooking/addBooking?id=${id}`,
-    })
-    
   },
 
   /**
@@ -105,6 +135,7 @@ Page({
     })
   },
 
+
   goToMe: function() {
     wx.redirectTo({
       url: '/pages/allbookings/allbookings',
@@ -112,6 +143,58 @@ Page({
   }
 
 
-
-
+  addBooking: function() {
+    const start = this.data.date
+    const end = this.data.dateTom
+    const total = this.data.total
+    const userId = app.globalData.userId 
+    const id = this.data.pet.id
+    const booking = {
+      total: total,
+      user_id: userId,
+      pet_id: id,
+      start_date: start,
+      end_date: end
+    }
+    console.log(booking)
+    wx.request({
+      url: `https://petbnb-ji21.herokuapp.com/api/v1/pets/${id}/bookings`,
+      method: 'POST',
+      data: booking,
+      success: () => {
+        wx.redirectTo({
+          url: '/pages/profile/profile',
+        })
+      }
+    })
+  },
+  total: function(start, end) {
+    start = start.replace(/-/g, "/")
+    end = end.replace(/-/g, "/")
+    const date1 = new Date(start);
+    const date2 = new Date(end);
+    const diffTime = Math.abs(date2 - date1)
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+    const price = this.data.pet.price
+    console.log(this.data.pet.price)
+    console.log(diffDays)
+    this.setData({total: diffDays*price})
+  },
+  bindDateChange: function(e) {
+    this.setData({
+      date: e.detail.value
+    })
+    console.log(this.data.date)
+  },
+  bindDateTomChange: function(e) {
+    console.log('pickerA selection change is sent, carrying the value ', e.detail.value)
+    this.setData({
+      dateTom: e.detail.value, hide: false
+    })
+    const date = this.data.date
+    const dateTom = this.data.dateTom
+    console.log(this.data.date)
+    console.log(this.data.dateTom)
+    this.total(date, dateTom)
+  },
 })

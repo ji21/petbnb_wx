@@ -6,18 +6,31 @@
     <view class="description">
       <view class="prop"> 
         <view class="gender-breed">
-          <view class="gender"> </view>
+          <view class="gender">{{pet.gender==='Male'?'🙎🏻‍♂️':'🙍🏻‍♀️'}}</view>
           <view class="breed">{{pet.breed}}</view>
         </view>
         <view class="neutered">{{pet.neutered?'✅':'❌'}}Neutered</view>
       </view>
       <view class="p">{{pet.description}}</view>
+      <view id="price">${{pet.price}} per day!!!</view>
+      <form bindsubmit="submitBooking">
+        <picker mode="date" value="{{date}}" start="{{date}}" end="3000-01-01" bindchange="bindDateChange">
+          <view class="picker">
+            Start date: {{date}}
+          </view>
+        </picker>
+        <picker mode="date" value="{{dateTom}}" start="{{date}}" end="3000-01-02" bindchange="bindDateTomChange">
+          <view class="picker">
+            End date: {{dateTom}}
+          </view>
+        </picker>
+        <view class="total {{hide?'hide':''}}">Total: ${{total}}</view>
+      </form>
     </view>
   </view>
   <button bindtap="addBooking" data-id="{{pet.id}}" data-user_id="{{pet.user_id}}"> Book {{pet.name}}</button>
+  <view style="height: 100rpx"></view>
 </view>
-
-
 
 
 

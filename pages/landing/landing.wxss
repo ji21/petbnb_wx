@@ -136,10 +136,10 @@
   background: #FFF3D0;
   margin-top: 8rpx;
   height: 24%;
-  width: 90%;
+  width: 104%;
   display: flex;
   justify-content: space-evenly;
-  padding-bottom: 25rpx;
+  padding-bottom: 43rpx;
   padding-right: 20rpx;
   border-radius: 30rpx;
 }
@@ -179,13 +179,13 @@
 .pet-info .description .prop .gender-breed .gender {
   width: 20%;
   height: 100%;
-  border: 1px solid black;
+  font-size: 21rpx!important;
 }
 
 .pet-info .description .p {
-  width: 90%;
+  width: 107%;
   height: 58%;
-  margin-top: 10rpx;
+  margin-top: -11rpx;
   margin-left: 15rpx;
   font-family: 'Times New Roman', Times, serif;
   padding-top: 14rpx;
@@ -206,4 +206,10 @@
   height: 60%;
   position: fixed;
   top: 0;
+}
+
+#gender {
+  font-size: 27rpx!important;
+  padding-left: 24rpx;
+  padding-top: 32rpx;
 }

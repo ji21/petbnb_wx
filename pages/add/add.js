@@ -47,13 +47,28 @@ Page({
    */
   onLoad: function (options) {
     const page = this
-    wx.request({
-      url: getApp().globalData.host + `api/v1/my_pets?user_id=104`,
-      success: (res) => {
-        page.setData({pets: res.data})
-        //this.setData(res.data)
-      }
-    })
+    if (app.globalData.userId) {
+      const id = app.globalData.userId
+      wx.request({
+        url: getApp().globalData.host + `api/v1/my_pets?user_id=${id}`,
+        success: (res) => {
+          page.setData({pets: res.data})
+          //this.setData(res.data)
+        }
+      })
+    } else {
+      app.addUserIdCallback = () => {
+        const id = app.globalData.userId
+        wx.request({
+          url: getApp().globalData.host + `api/v1/my_pets?user_id=${id}`,
+          success: (res) => {
+            page.setData({pets: res.data})
+          //this.setData(res.data)
+          }
+      })
+    }
+  }
+
   },
   /**
    * Lifecycle function--Called when page is initially rendered
@@ -116,9 +131,9 @@ Page({
   enablePopUp: function (e) {
     console.log('showing')
     this.setData({popUp: true});
-    console.log(this.data)
+    console.log("pets = ", this.data.pets)
     const id = e.currentTarget.dataset.id
-    console.log(id)
+    console.log("deleted id = ", id)
     this.setData({deleteId: id})
   },
   hidePopUp: function() {

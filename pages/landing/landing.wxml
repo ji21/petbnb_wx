@@ -23,7 +23,7 @@
           <view class="description">
             <view class="prop"> 
               <view class="gender-breed">
-                <view class="gender" style="font-size: 15rpx">{{pet.id}}</view>
+                <view id="gender">{{pet.gender==='Male'?'🙎🏻‍♂️':'🙍🏻‍♀️'}}</view>
                 <view class="breed" style="font-size: 26rpx">{{pet.breed}}</view>
               </view>
               <view class="neutered" style="font-size:24rpx">{{pet.neutered?'✅':'❌'}}Neutered</view>
@@ -33,7 +33,7 @@
         </view>
       </view>
     </view>
-    <view style="height:150rpx"></view>
+    <view style="height:200rpx"></view>
   </view>
 
   <view class="nav-bar">

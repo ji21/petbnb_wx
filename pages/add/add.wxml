@@ -1,22 +1,7 @@
 <!--pages/add/add.wxml-->
 <view class="rehide {{popUp?'':'hide'}}" bindtap="hidePopUp"></view>
-<view class="surprise {{popUp?'':'hide'}} {{deletePopUp?'blur':''}}">
+<view class="surprise {{popUp?'':'hide'}}">
   <view class="pop-up">
-    <image src=""/>
-    <view class="a-pet-info">
-      <view class="h3">{{pet.name}}</view>
-      <view class="description">
-        <view class="prop"> 
-          <view class="gender-breed">
-            <view class="gender">{{userId}}</view>
-            <view class="breed">{{pet.breed}}</view>
-          </view>
-          <view class="neutered">{{pet.neutered?'tick logo': 'cross logo'}} neutered</view>
-        </view>
-        <view class="p">{{pet.description}}</view>
-        <view class="price">{{pet.price}}$</view>
-      </view>
-    </view>
     <button class="delete" bindtap="remove">Remove</button>
   </view>
 </view>
@@ -32,7 +17,7 @@
             <view class="description">
               <view class="prop"> 
                 <view class="gender-breed">
-                  <view class="gender" style="font-size: 15rpx">{{pet.user_id}}</view>
+                  <view id="gender" style="font-size: 15rpx">{{pet.gender==='Male'?'🙎🏻‍♂️':'🙍🏻‍♀️'}}</view>
                   <view class="breed" style="font-size: 26rpx">{{pet.breed}}</view>
                 </view>
                 <view class="neutered" style="font-size:24rpx">{{pet.neutered?'✅':'❌'}}neutered</view>
