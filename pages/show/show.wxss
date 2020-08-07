@@ -5,12 +5,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  height: 94%;
+}
+
+.hide {
+  display: none;
 }
 
 .container > image {
   width: 72%;
-  height: 45%;
+  height: 550rpx;
   border-radius: 18rpx;
   border: 4rpx solid #FFF3D0;
   box-shadow: 0rpx 10rpx 12rpx #FFF3D0;
@@ -18,10 +21,11 @@
 
 .pet-card {
   width: 72%;
-  height: 40%;
+  height: 724rpx;
   position: relative;
   background: white;
   border-radius: 8rpx;
+  margin-top: 50rpx;
 }
 
 .pet-name {
@@ -36,7 +40,7 @@
 }
 
 .description {
-  height: 60%;
+  height: 562rpx;
   width: 80%;
   left: 30rpx;
   top: 120rpx;
@@ -45,14 +49,14 @@
   box-shadow: 1px 1px 0px #F7F7F7;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-around;
   background:#FFF3D0;
   margin-left: 26rpx;
 }
 
 .description .prop {
   width: 100%;
-  height: 14%;
+  height: 58rpx;
   display: flex;
   justify-content: flex-start;
 }
@@ -71,7 +75,10 @@
   width: 35%;
   height: 100%;
   font-family: 'Times New Roman', Times, serif;
-  padding-left: 26rpx;
+  padding-left: 0rpx;
+  font-size: 36rpx;
+  padding-top: 4rpx;
+
 }
 
 .description .prop .gender-breed .breed {
@@ -80,25 +87,45 @@
   font-family: 'Times New Roman', Times, serif;
   padding-top: 20rpx;
   text-align: center;
+  font-size: 38rpx;  
 }
 
 .description .prop .gender-breed .gender {
-  border: 1px solid black;
+  font-size: 45rpx;
   width: 25%;
   height: 100%;
-  padding-top: 12rpx;
+  padding-top: 18rpx;
+  padding-left: 28rpx;  
 }
 
 
 .description .p {
-  width: 100%;
-  height: 80%;
+  width: 367rpx;
+  height: 160rpx;
+  margin-top: 0;
+  margin-left: 0;
+  padding-left: 39rpx;
 }
 
 .container > button {
   width: 72%;
-  height: 5%;
-  background:#FF695D;
+  height: 79rpx;
+  background: #FF695D;
   margin-bottom: 25rpx;
+  margin-top: 49rpx;
 }
 
+picker {
+  padding-left: 39rpx;
+}
+
+#price {
+  width: 367rpx;
+  padding-left: 38rpx;
+}
+
+.total {
+  height: 85rpx;
+  padding-left: 39rpx;
+  padding-top: 30rpx;  
+}
