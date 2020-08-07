@@ -1,27 +1,17 @@
 <view class="container">
 <view class = "bookingBanner"><text>My Bookings</text> </view>
     <view class="contents">
-      <!--  -->
-      <view class="pet-card" wx:for="{{pets}}" wx:for-item="pet" data-id="{{pet.id}}" bindtap="goToshowBooking">
-        <image src="{{pet.photo}}"/>
+      <view class="pet-card" wx:for="{{pets.client_bookings}}" wx:for-item="booking" data-id="{{booking.pet_id}}">
+        <image src="{{booking.pet_photo}}"/>
         <view class="pet-info">
-          <view class="h3" style="font-size: 30rpx">{{pet.name}}</view>
+          <view class="h3" style="font-size: 30rpx">{{booking.pet_name}}</view>
           <view class="description">
-            <view class="prop"> 
-              <view class="gender-breed">
-                <view class="gender" style="font-size: 15rpx">{{pet.id}}</view>
-                <view class="breed" style="font-size: 26rpx">{{pet.breed}}</view>
-              </view>
-              <view class="neutered" style="font-size:24rpx">{{pet.neutered?'✅':'❌'}}Neutered</view>
-            </view>
-            <view class="p" style="font-size: 30rpx">{{pet.description}}</view>
-            <view class="booking">
-            <view class= "p" style="font-size: 27rpx"><text>Start Date: {{}} End Date: {{}}</text></view>
-            <view class = "price" style="font-size: 24rpx"><text>Price :</text></view>
+            <view class= "p" style="font-size: 27rpx">Start Date: {{booking.start_date}}</view>
+            <view class= "p" style="font-size: 27rpx">End Date: {{booking.end_date}}</view>
+            <view class = "price" style="font-size: 24rpx"><text>Price: ${{booking.total}}</text></view>
             </view>
           </view>
         </view>
-      </view>
     </view>
     <view style="height:150rpx"></view>
   </view>

@@ -12,7 +12,7 @@ Page({
    */
   data: {
     popUp: false,
-    home: true,
+    profile: true,
     petName: null,
     petGender: null,
     petBreed: null,
@@ -27,18 +27,36 @@ Page({
   // https://petbnb-ji21.herokuapp.com/api/v1/pets?user_id=104
 
   onLoad: function (options) {
-    // event.on('hasUserId', this, this.getPets)
     const page = this
-    console.log("getting pets")
-    wx.request({
-      url: host + `api/v1/bookings?user_id=${page.data.user_id}`,
-      success: (res) => {
-        console.log(res)
-        page.setData({pets: res.data})
-        console.log(page.data)
+    // const promise = globalData.userId
+    // const promise2 = 
+    if (app.globalData.userId) {
+      const id = app.globalData.userId
+      wx.request({
+        url: host + `api/v1/bookings?user_id=${id}`,
+        success: (res) => {
+          page.setData({pets: res.data})
+        }
+      }) 
+    } else {
+      app.userIdCallback = () => {
+        const id = app.globalData.userId
+        wx.request({
+          url: host + `api/v1/bookings?user_id=${id}`,
+          success: (res) => {
+            page.setData({pets: res.data})
+            console.log(page.data.pets.client_bookings)
+          }
+        })
       }
-    })
+    }
   },
+
+
+
+
+
+
 
   // https://petbnb-ji21.herokuapp.com/api/v1/bookings?user_id=104 
   // host: 'https://petbnb-ji21.herokuapp.com/'
@@ -58,14 +76,13 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-
+    console.log("all booking page", this.data)
   },
 
   /**
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    console.log("global data in landing", globalData)
   },
 
   /**
@@ -145,7 +162,9 @@ Page({
       url: '/pages/showBooking/showBooking',
     })
   },
-
-
-
+  goToLanding: function() {
+    wx.redirectTo({
+      url: '/pages/landing/landing',
+    })
+  }
 })

@@ -78,7 +78,9 @@
           <picker range="{{neutered}}" bindchange="changeNeutered" name="neutered">{{selectedNeutered}}</picker>
         </view>
       </view>
-      <view class="image-uploader" bindtap="takePhoto" name="photo"> </view>
+      <view class="image-uploader" bindtap="takePhoto" name="photo"> 
+        <image src="{{photo? 'photo': ''}}"/>
+      </view>
     
       <button form-type="submit">Add!</button>
     </form>

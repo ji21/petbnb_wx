@@ -54,6 +54,7 @@ Page({
    */
   onLoad: function (options) {
     console.log(this.data)
+    console.log("options", options)
     let page = this;
     wx.request({
       url: `${host}api/v1/pets/${options.id}`,
@@ -140,7 +141,7 @@ Page({
     wx.redirectTo({
       url: '/pages/allbookings/allbookings',
     })
-  }
+  },
 
 
   addBooking: function() {

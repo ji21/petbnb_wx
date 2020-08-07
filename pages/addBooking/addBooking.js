@@ -1,31 +1,18 @@
-// pages/showBooking/showBooking.js
-const app = getApp()
-let host = app.globalData.host;
-
+// pages/addBooking/addBooking.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    profile: true
+
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    console.log(this.data)
-    let page = this;
-    wx.request({
-      url: `${host}api/v1/pets?pet_id=${options.id}`,
-      method: "GET", 
-      success: (res) => {
-        console.log(res.data)
-        page.setData({pet: res.data})
-        //this.setData(res.data)
-      }}
-    )
+
   },
 
   /**
@@ -39,6 +26,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+
   },
 
   /**
@@ -74,16 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  goToAdd: function() {
-    wx.redirectTo({
-      url: '/pages/add/add',
-    })
-  },
-  goToLanding: function() {
-    wx.redirectTo({
-      url: '/pages/landing/landing',
-    })
   }
 })
