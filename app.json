@@ -5,13 +5,12 @@
     "pages/show/show",
     "pages/logs/logs",
     "pages/profile/profile",
-    "pages/add/add", 
-    "pages/addBooking/addBooking"
+    "pages/add/add"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "Petbnb",
     "navigationBarTextStyle":"black"
   },
   "style": "v2",

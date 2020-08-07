@@ -20,8 +20,8 @@
 .surprise {
   position: fixed;
   width: 74%;
-  height: 64%;
-  top: 15%;
+  height: 28%;
+  top: 29%;  
   left: 13%;
   right: 13%;
   z-index: 2;
@@ -68,7 +68,6 @@
 
 .a-pet-info > .description {
   height: 85%;
-  border: 1px solid black;
 }
 
 .pop-up > .a-pet-info{
@@ -173,6 +172,7 @@
   align-items: flex-start;
 }
 
+
 .pet-info .h3{
   border-radius: 10rpx;
   height: 20%;
@@ -197,10 +197,10 @@
   background: #FFF3D0;
   margin-top: 8rpx;
   height: 24%;
-  width: 90%;
+  width: 104%;
   display: flex;
   justify-content: space-evenly;
-  padding-bottom: 25rpx;
+  padding-bottom: 43rpx;
   padding-right: 20rpx;
   border-radius: 30rpx;
 }
@@ -240,13 +240,13 @@
 .pet-info .description .prop .gender-breed .gender {
   width: 20%;
   height: 100%;
-  border: 1px solid black;
+  font-size: 21rpx!important;
 }
 
 .pet-info .description .p {
-  width: 90%;
+  width: 107%;
   height: 58%;
-  margin-top: 10rpx;
+  margin-top: -11rpx;
   margin-left: 15rpx;
   font-family: 'Times New Roman', Times, serif;
   padding-top: 14rpx;
@@ -370,3 +370,8 @@ picker {
   background: #FF695D;
 }
 
+#gender {
+  font-size: 27rpx!important;
+  padding-left: 24rpx;
+  padding-top: 32rpx;
+}

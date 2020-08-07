@@ -19,10 +19,10 @@ App({
     // 登录
     wx.login({
       success: (res) => {
-        setTimeout(wx.showLoading({
-          title: 'Loading',
-        }), 3000)}
-        )
+        // setTimeout(
+        // wx.showLoading({
+        //   title: 'Loading',
+        // }), 10000)
       // insert next code here
         wx.request({
           url: this.globalData.host + 'login',
@@ -34,6 +34,8 @@ App({
           success: (res) => {
             console.log('global resres', res)
             this.globalData.userId = res.data.userId
+            if (this.userIdCallback) this.userIdCallback()
+            if (this.addUserIdCallback) this.addUserIdCallback()
             // event.emit('hasUserId')
           }
         })

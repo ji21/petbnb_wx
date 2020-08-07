@@ -27,16 +27,30 @@ Page({
   // https://petbnb-ji21.herokuapp.com/api/v1/pets?user_id=104
 
   onLoad: function (options) {
-    // event.on('hasUserId', this, this.getPets)
     const page = this
-    console.log("getting pets")
-    wx.request({
-      url: host + `api/v1/pets`,
-      success: (res) => {
-        page.setData({pets: res.data})
-        console.log(page.data)
+    // const promise = globalData.userId
+    // const promise2 = 
+    if (app.globalData.userId) {
+      const id = app.globalData.userId
+      wx.request({
+        url: host + `api/v1/pets?user_id=${id}`,
+        success: (res) => {
+          page.setData({pets: res.data})
+        }
+      }) 
+    } else {
+      app.userIdCallback = () => {
+        const id = app.globalData.userId
+        wx.request({
+          url: host + `api/v1/pets?user_id=${id}`,
+          success: (res) => {
+            page.setData({pets: res.data})
+          }
+        })
       }
-    })
+    }
+
+    // new Promise(promise).then(a=>console.log(a))
   },
 
   // getPets() {
