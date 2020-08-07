@@ -22,7 +22,6 @@ Page({
     deletePopUp: false,
     userId: app.globalData.userInfo,
     items: []
-
   },
   changeNeutered: function(e) {
     console.log(e.detail.value);
@@ -49,14 +48,13 @@ Page({
   onLoad: function (options) {
     const page = this
     wx.request({
-      url: getApp().globalData.host + 'api/v1/pets',
+      url: getApp().globalData.host + `api/v1/my_pets?user_id=104`,
       success: (res) => {
         page.setData({pets: res.data})
         //this.setData(res.data)
       }
     })
   },
-
   /**
    * Lifecycle function--Called when page is initially rendered
    */
@@ -139,7 +137,7 @@ Page({
     this.goToProfile()
   },
   submit: function(e) {
-    console.log(e.detail.value);
+    console.log(this.data);
     const name = e.detail.value.name;
     const breed = e.detail.value.breed;
     const description = e.detail.value.description;
@@ -147,6 +145,8 @@ Page({
     const gender = e.detail.value.gender
     const neutered = e.detail.value.neutered
     const boo = neutered === "0"
+    const photo = this.data.photo
+
     let boo2;
     gender === "0" ? boo2 = "Male": boo2 = "Female";
     const pet = {
@@ -157,7 +157,8 @@ Page({
       gender: boo2,
       neutered: boo,
       age: 0,
-      user_id: getApp().globalData.userId
+      user_id: getApp().globalData.userId,
+      photo: photo
     }
     wx.request({
       url: getApp().globalData.host + 'api/v1/pets',
@@ -188,6 +189,7 @@ Page({
 
 
   takePhoto: function() {
+    const page = this
     wx.chooseImage({
       count: 1,
       sizeType: ['original', 'compressed'],
@@ -199,11 +201,10 @@ Page({
           blob: {
             uri: tempFilePath,
           },
-        }).save().then(
-          file => console.log(file.url())
+        }).save().then(file=>
+          page.setData({photo: file.url() })
         ).catch(console.error);
       }
     });
   }
-
 })

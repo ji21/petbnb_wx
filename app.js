@@ -9,6 +9,8 @@ AV.init({
   serverURLs: "https://ienhaftr.lc-cn-n1-shared.com"
 });
 
+
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -17,9 +19,13 @@ App({
     // 登录
     wx.login({
       success: (res) => {
+        setTimeout(wx.showLoading({
+          title: 'Loading',
+        }), 3000)}
+        )
       // insert next code here
         wx.request({
-          url: getApp().globalData.host + 'login',
+          url: this.globalData.host + 'login',
           method: 'post',
           data: {
             code: res.code
@@ -28,7 +34,7 @@ App({
           success: (res) => {
             console.log('global resres', res)
             this.globalData.userId = res.data.userId
-            event.emit('hasUserId')
+            // event.emit('hasUserId')
           }
         })
       }

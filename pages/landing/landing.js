@@ -3,7 +3,7 @@ const app = getApp();
 const globalData = getApp().globalData
 const host = app.globalData.host;
 const userId = app.globalData.userId;
-import event from '../../utils/event';
+// import event from '../../utils/event';
 
 Page({
 
