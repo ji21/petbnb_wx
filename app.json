@@ -6,7 +6,8 @@
     "pages/logs/logs",
     "pages/profile/profile",
     "pages/add/add", 
-    "pages/addBooking/addBooking"
+    "pages/addBooking/addBooking",
+    "pages/showBooking/showBooking"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -79,6 +79,20 @@
 					"id": -1,
 					"name": "add",
 					"pathName": "pages/add/add",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "landing",
+					"pathName": "pages/landing/landing",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "showbooking",
+					"pathName": "pages/showBooking/showBooking",
 					"scene": null
 				}
 			]

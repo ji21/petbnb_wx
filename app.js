@@ -19,10 +19,6 @@ App({
     // 登录
     wx.login({
       success: (res) => {
-        setTimeout(wx.showLoading({
-          title: 'Loading',
-        }), 3000)}
-        )
       // insert next code here
         wx.request({
           url: this.globalData.host + 'login',

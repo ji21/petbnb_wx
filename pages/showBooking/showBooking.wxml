@@ -1,0 +1,81 @@
+<!--pages/showBooking/showBooking.wxml-->
+<view class="container">
+  <view><text>Your Booking for {{pet.name}}</text></view>
+  <image src="{{pet.photo}}" />
+  <view class="pet-card">
+
+    <view class="pet-name">Doggy{{pet.name}}</view>
+    <view class="description">
+
+      <view class="prop"> 
+        <view class="gender-breed">
+
+          <view class="gender"> male</view>
+          <view class="breed">{{pet.breed}}</view>
+
+        </view>
+        <view class="neutered">{{pet.neutered?'✅':'❌'}}Neutered</view>
+      </view>
+
+      <view class="p">Cute looking pet{{pet.description}}</view>
+    </view>
+
+
+
+
+
+
+
+  </view>
+
+
+
+
+
+
+  <button bindtap="#" data-id="{{pet.id}}" data-user_id="{{pet.user_id}}"> Cancel Booking {{pet.name}}</button>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- navbar -->
+
+
+
+
+
+
+<view class="nav-bar">
+    <button class="icons {{home?'grey':''}}" bindtap="goToLanding">
+      <image src="/images/sydney-opera-house.svg"/>
+      <view class="text">Home</view>
+    </button>
+    <button class="icons {{add?'grey':''}}" bindtap="goToAdd">
+      <image src="/images/veterinary.svg"/>
+      <view class="text">Add new</view>
+    </button>
+    <button class="icons {{profile?'grey':''}}" bindtap="goToProfile">
+      <image src="/images/user.svg"/>
+      <view class="text">Me</view>
+    </button>
+</view>
+
+
+
+
+
+
+
+
+
