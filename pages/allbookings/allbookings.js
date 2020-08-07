@@ -27,31 +27,21 @@ Page({
   // https://petbnb-ji21.herokuapp.com/api/v1/pets?user_id=104
 
   onLoad: function (options) {
+    // event.on('hasUserId', this, this.getPets)
     const page = this
-    // const promise = globalData.userId
-    // const promise2 = 
-    if (app.globalData.userId) {
-      const id = app.globalData.userId
-      wx.request({
-        url: host + `api/v1/pets?user_id=${id}`,
-        success: (res) => {
-          page.setData({pets: res.data})
-        }
-      }) 
-    } else {
-      app.userIdCallback = () => {
-        const id = app.globalData.userId
-        wx.request({
-          url: host + `api/v1/pets?user_id=${id}`,
-          success: (res) => {
-            page.setData({pets: res.data})
-          }
-        })
+    console.log("getting pets")
+    wx.request({
+      url: host + `api/v1/bookings?user_id=${page.data.user_id}`,
+      success: (res) => {
+        console.log(res)
+        page.setData({pets: res.data})
+        console.log(page.data)
       }
-    }
-
-    // new Promise(promise).then(a=>console.log(a))
+    })
   },
+
+  // https://petbnb-ji21.herokuapp.com/api/v1/bookings?user_id=104 
+  // host: 'https://petbnb-ji21.herokuapp.com/'
 
   // getPets() {
   //   const page = this
@@ -148,10 +138,14 @@ Page({
     })
   },
 
-  goToMe: function() {
+
+
+  goToshowBooking: function() {
     wx.redirectTo({
-      url: '/pages/allbookings/allbookings',
+      url: '/pages/showBooking/showBooking',
     })
-  }
+  },
+
+
 
 })

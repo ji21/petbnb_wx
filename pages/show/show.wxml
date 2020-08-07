@@ -44,7 +44,7 @@
       <image src="/images/veterinary.svg"/>
       <view class="text">Add new</view>
     </button>
-    <button class="icons {{profile?'grey':''}}" bindtap="goToProfile">
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="goToMe" class="icons {{profile?'grey':''}}">
       <image src="/images/user.svg"/>
       <view class="text">Me</view>
     </button>

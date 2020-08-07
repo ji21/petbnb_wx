@@ -134,6 +134,15 @@ Page({
       url: '/pages/profile/profile',
     })
   },
+
+
+  goToMe: function() {
+    wx.redirectTo({
+      url: '/pages/allbookings/allbookings',
+    })
+  }
+
+
   addBooking: function() {
     const start = this.data.date
     const end = this.data.dateTom

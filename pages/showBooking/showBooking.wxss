@@ -1,0 +1,194 @@
+/* pages/showBooking/showBooking.wxss */
+
+/* pages/show/show.wxss */
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 94%;
+}
+
+.container > image {
+  width: 72%;
+  height: 37%;
+  border-radius: 18rpx;
+  border: 4rpx solid #FFF3D0;
+  box-shadow: 0rpx 10rpx 12rpx #FFF3D0;
+}
+
+.pet-card {
+  width: 75%;
+  height: 41%;
+  /* position: relative; */
+  background: white;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/* .pet-name {
+  height: 12%;
+  width: 50%;
+  position: absolute;
+  top: 20rpx;
+  left: 12rpx;
+  font-family: initial;
+  padding-left: 48rpx;
+  font-weight: bolder;
+} */
+
+.description {
+  height: 200rpx;
+  width: 92%;
+  left: 0rpx;
+  top: 20rpx;
+  margin-top: 20rpx;
+  /* position: absolute; */
+  border-radius: 25rpx;
+  box-shadow: 1px 1px 0px #F7F7F7;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background:#FFF3D0;
+  margin-left: 22rpx;
+}
+
+.description .prop {
+  width: 100%;
+  height: 12%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.description .prop .gender-breed {
+  border-radius: 10rpx;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 10rpx;
+}
+
+.description .prop .neutered {
+  border-radius: 50rpx;
+  width: 35%;
+  height: 100%;
+  font-family: 'Times New Roman', Times, serif;
+  padding-left: 26rpx;
+}
+
+.description .prop .gender-breed .breed {
+  width: 70%;
+  height: 100%;
+  font-family: 'Times New Roman', Times, serif;
+  padding-top: 20rpx;
+  text-align: center;
+}
+
+.description .prop .gender-breed .gender {
+  border: 1px solid black;
+  width: 25%;
+  margin-top: 17px;
+}
+
+
+.description .p {
+  width: 100%;
+  height: 35%;
+  padding-top: 20rpx;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
+  margin-left: 12rpx;
+  margin-top: 12rpx;
+}
+
+.bookings {
+  height: 200rpx;
+  width: 92%;
+  /* top: 245rpx; */
+  /* position:  absolute; */
+  border-radius: 25rpx;
+  box-shadow: 1px 1px 0px #F7F7F7;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background:#fff3d0;
+  margin-left: 22rpx;
+  margin-top: 20rpx;
+  font-size: medium;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+.bookings .dates {
+display: flex;
+flex-direction: column;
+margin-top: 10rpx;
+margin-left: 15rpx;
+}
+
+.bookings .details {
+  /* display: flex; */
+  margin-top: 15rpx;
+}
+
+.bookings .details .price {
+  margin-top: 10rpx;
+  margin-left: 100rpx;
+}
+
+.bookings .details .dates .sdate {
+  margin-bottom: 12rpx;
+}
+
+.bookings .details .dates .tprice {
+  margin-top: 10rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container > button {
+  width: 72%;
+  height: 5%;
+  background:#FF695D;
+  margin-bottom: 25rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

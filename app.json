@@ -5,7 +5,10 @@
     "pages/show/show",
     "pages/logs/logs",
     "pages/profile/profile",
-    "pages/add/add"
+    "pages/add/add", 
+    "pages/addBooking/addBooking",
+    "pages/showBooking/showBooking",
+    "pages/allbookings/allbookings"
   ],
   "window":{
     "backgroundTextStyle":"light",

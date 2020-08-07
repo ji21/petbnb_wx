@@ -1,4 +1,22 @@
+/* pages/allbookings/allbookings.wxss */
+
 /* pages/landing/landing.wxss */
+
+.bookingBanner {
+display: flex;
+align-items: center;
+text-align: center;
+text-justify: center;
+background: white;
+margin: 20rpx 10rpx 0rpx 10rpx;
+width: 98%;
+height: 100rpx;
+justify-content: space-around;
+align-items: center;
+border-radius: 12rpx;
+box-shadow: 4rpx 4rpx 8rpx rgb(231, 231, 231);
+font-weight: 600;
+}
 
 .hide {
   display: none;
@@ -87,7 +105,7 @@
   background: white;
   margin: 20rpx 10rpx 0rpx 10rpx;
   width: 98%;
-  height: 230rpx;
+  height: 350rpx;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -97,7 +115,7 @@
 
 .pet-card image {
   width: 30%;
-  height: 80%;
+  height: 60%;
   border-radius: 70rpx;
   border: 3rpx solid #FFF3D0;
   box-shadow: 0rpx 5rpx 3rpx #FF695D;
@@ -134,12 +152,12 @@
 
 .pet-info .description .prop {
   background: #FFF3D0;
-  margin-top: 8rpx;
+  margin-top: -42rpx;
   height: 24%;
-  width: 104%;
+  width: 90%;
   display: flex;
   justify-content: space-evenly;
-  padding-bottom: 43rpx;
+  padding-bottom: 6rpx;
   padding-right: 20rpx;
   border-radius: 30rpx;
 }
@@ -179,18 +197,23 @@
 .pet-info .description .prop .gender-breed .gender {
   width: 20%;
   height: 100%;
-  font-size: 21rpx!important;
+  border: 1px solid black;
 }
 
 .pet-info .description .p {
-  width: 107%;
+  width: 90%;
   height: 58%;
-  margin-top: -11rpx;
-  margin-left: 15rpx;
+  /* margin-top: 2rpx;
+  margin-left: 8rpx; */
   font-family: 'Times New Roman', Times, serif;
-  padding-top: 14rpx;
+  padding-top: 10rpx;
   text-overflow: ellipsis;
 }
+
+.pet-info .description .booking {
+margin-top: 18rpx;
+}
+
 
 .login-pop-up {
   width: 100%;
@@ -208,8 +231,3 @@
   top: 0;
 }
 
-#gender {
-  font-size: 27rpx!important;
-  padding-left: 24rpx;
-  padding-top: 32rpx;
-}
