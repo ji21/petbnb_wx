@@ -11,7 +11,7 @@
         </view>
         <view class="neutered">{{pet.neutered?'✅':'❌'}}Neutered</view>
       </view>
-      <view class="p"> </view>
+      <view class="p">{{pet.description}}</view>
     </view>
   </view>
   <button bindtap="addBooking" data-id="{{pet.id}}" data-user_id="{{pet.user_id}}"> Book {{pet.name}}</button>

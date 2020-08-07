@@ -8,7 +8,7 @@
       <view class="description">
         <view class="prop"> 
           <view class="gender-breed">
-            <view class="gender">{{pet.gender == 'male'? 'male logo': 'female logo'}}</view>
+            <view class="gender">{{userId}}</view>
             <view class="breed">{{pet.breed}}</view>
           </view>
           <view class="neutered">{{pet.neutered?'tick logo': 'cross logo'}} neutered</view>
